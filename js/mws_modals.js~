@@ -1,0 +1,57 @@
+/*! mws_modals.js */
+(function(){
+
+    "use strict";
+
+    //main variable
+    var modalID;
+
+    //Triggering a modal
+    mws_addEventListener(qsa('.modal-trigger'), 'click', function(el) {
+	modalID = el.getAttribute('data-modal');
+        trigger_modal(modalID);	
+    });
+
+    //Closing a modal
+    mws_addEventListener(qsa('.modal-close, .modal-dismiss'), "click", function(el){
+        close_modal(modalID);
+    });
+
+    //Close on esc
+    hotkeys('esc', function (event, handler) {
+	close_modal(modalID);
+    });
+})();
+
+//Close modal function
+function close_modal(modalID) {
+    mws_toggleClass(qs('#' + modalID + ' .modal-background'), 'scaleInCircle');
+    mws_toggleClass(qs('#' + modalID + ' .modal-content'), 'scaleIn');
+    mws_toggleClass(qs('#' + modalID + ' .modal-close'), 'is-hidden');
+    //Restore native body scroll
+    if (qsa('.dashboard-wrapper').length)
+        rmc(qs('body'), 'is-fixed');
+    
+    setTimeout(function(){
+        rmc(qs('.modal.is-active'), 'is-active');
+        //Restore sticky nav and backktotop
+	mws_toggleClass(qsa('#scrollnav, #backtotop'), 'is-hidden');
+    }, 500);
+}
+
+//Open/Close a modal
+function trigger_modal(modalID) {
+    console.log("triggermodal", modalID);
+    mws_toggleClass(qs('#' + modalID), 'is-active');
+    mws_toggleClass(qs('#' + modalID + ' .modal-background'), 'scaleInCircle');
+    mws_toggleClass(qs('#' + modalID + ' .modal-content'), 'scaleIn');
+    mws_toggleClass(qs('#' + modalID + ' .modal-close'), 'is-hidden');
+    qs('#' + modalID + ' .modal-content input[autofocus]').select();
+    //Prevent sticky fixed nav and backtotop from overlapping modal
+    mws_toggleClass(qs('#scrollnav, #backtotop'), 'is-hidden');
+    //Prevent body from scrolling when scrolling inside modal
+    setTimeout(function(){
+        if (qsa('.dashboard-wrapper').length)
+	    mws_addClass(qs('body'), 'is-fixed');
+    }, 700);
+}

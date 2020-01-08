@@ -1,0 +1,105 @@
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+/*! layout/_colors.scss | Bulkit | CSS Ninja */
+/* ==========================================================================
+Bulkit general color variables
+========================================================================== */
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Bulkit colors
+1. State colors
+2. Social colors
+3. Predefined gradients
+4. Predefined box shadows
+=============================================================================
+***/
+/* ==========================================================================
+0. Bulkit colors
+========================================================================== */
+/* ==========================================================================
+1. State colors
+========================================================================== */
+/* ==========================================================================
+2. Social colors
+========================================================================== */
+/* ==========================================================================
+3. Predefined gradients
+========================================================================== */
+/* Chrome 10-25, Safari 5.1-6 */
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* ==========================================================================
+4. Predefined box shadows
+========================================================================== */
+/*! themes/_dashboard.scss | Bulkit | CSS Ninja */
+/* ==========================================================================
+Dashboard theme variables and styles (Dashboard theme is used in the Dashboard kit)
+========================================================================== */
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Bulkit colors
+1. State colors
+2. Social colors
+3. Predefined gradients
+4. Predefined box shadows
+=============================================================================
+***/
+/* ==========================================================================
+0. Theme color variables
+========================================================================== */
+/* ==========================================================================
+1. Theme gradient
+========================================================================== */
+/* ==========================================================================
+2. Box shadows
+========================================================================== */
+/* ==========================================================================
+3. Pageloader
+========================================================================== */
+.pageloader {
+  background: #758ecd !important; }
+
+.breadcrumbs {
+  position: absolute;
+  top: 80px;
+  right: 5%;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999; }
+  .breadcrumbs ul {
+    margin: 0 !important; }
+    .breadcrumbs ul li {
+      display: inline-block;
+      list-style: none;
+      margin: 0 0 0 2px; }
+      .breadcrumbs ul li:first-child:before {
+        content: '';
+        display: none !important; }
+      .breadcrumbs ul li:before {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z' fill='%23a0a0a0'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 20px;
+        height: 12px;
+        color: #a0a0a0;
+        fill: #a0a0a0;
+        margin-right: 1px; }
+  .breadcrumbs a {
+    font-weight: 400; }
+  .breadcrumbs.is-light {
+    color: #fff; }
+    .breadcrumbs.is-light ul li:before {
+      color: #fff; }
+    .breadcrumbs.is-light a {
+      color: #f4f7ff;
+      opacity: 0.8; }
+      .breadcrumbs.is-light a:hover {
+        opacity: 1; }
+
+/*# sourceMappingURL=breadcrumbs.css.map */

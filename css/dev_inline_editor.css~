@@ -1,0 +1,21 @@
+/* dev_inline_editor scss */
+#dev_inline_editor {
+  width: 520px;
+  overflow: hidden;
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  background: #333;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 10px;
+}
+
+#dev_inline_editor button#save_monaco_editor {
+  width: 100%;
+}
+
+#dev_inline_editor #dev_inline_head {
+  display: flex;}
+#dev_inline_editor #dev_inline_head input {
+  width: 100%;}

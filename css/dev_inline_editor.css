@@ -1,0 +1,30 @@
+/* dev_inline_editor scss */
+#dev_inline_editor {
+  width: 520px;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 99;
+  background: #344258;
+  padding: 3px;
+}
+
+#dev_inline_editor button#save_monaco_editor {
+  width: 100%;}
+
+#dev_inline_editor #dev_inline_head {
+  display: flex;}
+#dev_inline_editor #dev_inline_head input {
+    width: 100%;}
+
+#dev_inline_editor.dev_hidden {
+    height: fit-content !important;
+    width: fit-content !important;}
+#dev_inline_editor.dev_hidden .dev_hidden {
+    display: none !important;}
+
+.autocomplete-suggestions {
+  background: white !important;
+}

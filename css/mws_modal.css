@@ -1,0 +1,386 @@
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+.modal-close {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.modal-close {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(10, 10, 10, 0.2);
+  border: none;
+  border-radius: 290486px;
+  cursor: pointer;
+  pointer-events: auto;
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 0;
+  height: 20px;
+  max-height: 20px;
+  max-width: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  outline: none;
+  position: relative;
+  vertical-align: top;
+  width: 20px; }
+  .modal-close::before, .modal-close::after {
+    background-color: white;
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform-origin: center center; }
+  .modal-close::before {
+    height: 2px;
+    width: 50%; }
+  .modal-close::after {
+    height: 50%;
+    width: 2px; }
+  .modal-close:hover, .modal-close:focus {
+    background-color: rgba(10, 10, 10, 0.3); }
+  .modal-close:active {
+    background-color: rgba(10, 10, 10, 0.4); }
+  .is-small.modal-close {
+    height: 16px;
+    max-height: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    min-width: 16px;
+    width: 16px; }
+  .is-medium.modal-close {
+    height: 24px;
+    max-height: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    min-width: 24px;
+    width: 24px; }
+  .is-large.modal-close {
+    height: 32px;
+    max-height: 32px;
+    max-width: 32px;
+    min-height: 32px;
+    min-width: 32px;
+    width: 32px; }
+
+.modal, .modal-background {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+/*! layout/_colors.scss | Bulkit | CSS Ninja */
+/* ==========================================================================
+Bulkit general color variables
+========================================================================== */
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Bulkit colors
+1. State colors
+2. Social colors
+3. Predefined gradients
+4. Predefined box shadows
+=============================================================================
+***/
+/* ==========================================================================
+0. Bulkit colors
+========================================================================== */
+/* ==========================================================================
+1. State colors
+========================================================================== */
+/* ==========================================================================
+2. Social colors
+========================================================================== */
+/* ==========================================================================
+3. Predefined gradients
+========================================================================== */
+/* Chrome 10-25, Safari 5.1-6 */
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* ==========================================================================
+4. Predefined box shadows
+========================================================================== */
+/*! themes/_dashboard.scss | Bulkit | CSS Ninja */
+/* ==========================================================================
+Dashboard theme variables and styles (Dashboard theme is used in the Dashboard kit)
+========================================================================== */
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Bulkit colors
+1. State colors
+2. Social colors
+3. Predefined gradients
+4. Predefined box shadows
+=============================================================================
+***/
+/* ==========================================================================
+0. Theme color variables
+========================================================================== */
+/* ==========================================================================
+1. Theme gradient
+========================================================================== */
+/* ==========================================================================
+2. Box shadows
+========================================================================== */
+/* ==========================================================================
+3. Pageloader
+========================================================================== */
+.pageloader {
+  background: #758ecd !important; }
+
+.modal {
+  align-items: center;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  z-index: 9999; }
+  .modal.is-active {
+    display: flex; }
+
+.modal-background {
+  background-color: rgba(10, 10, 10, 0.86); }
+
+.modal-content,
+.modal-card {
+  margin: 0 20px;
+  max-height: calc(100vh - 160px);
+  overflow: auto;
+  position: relative;
+  width: 100%; }
+  @media screen and (min-width: 769px), print {
+    .modal-content,
+    .modal-card {
+      margin: 0 auto;
+      max-height: calc(100vh - 40px);
+      width: 640px; } }
+
+.modal-close {
+  background: none;
+  height: 40px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 40px; }
+
+.modal-card {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+  -ms-overflow-y: visible; }
+
+.modal-card-head,
+.modal-card-foot {
+  align-items: center;
+  background-color: whitesmoke;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  padding: 20px;
+  position: relative; }
+
+.modal-card-head {
+  border-bottom: 1px solid #dbdbdb;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px; }
+
+.modal-card-title {
+  color: #363636;
+  flex-grow: 1;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  line-height: 1; }
+
+.modal-card-foot {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top: 1px solid #dbdbdb; }
+  .modal-card-foot .button:not(:last-child) {
+    margin-right: 0.5em; }
+
+.modal-card-body {
+  -webkit-overflow-scrolling: touch;
+  background-color: white;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: auto;
+  padding: 20px; }
+
+/*! _dialogs.scss | Bulkit | CSS Ninja */
+/* ==========================================================================
+Modal dialogs styles
+========================================================================== */
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Base modal class
+1. Modal active state
+2. Media queries
+=============================================================================
+***/
+/* ==========================================================================
+0. Base modal class
+========================================================================== */
+.modal {
+  transition: all 0.5s;
+  transform: scale(0); }
+  .modal .modal-content {
+    transition: all 0.4s;
+    transform: scale(0);
+    opacity: 0;
+    z-index: 99 !important; }
+  .modal .modal-close {
+    transition: all 0.4s;
+    z-index: 100 !important;
+    transform: rotate(0); }
+    .modal .modal-close:hover {
+      transform: rotate(180deg); }
+  .modal a {
+    border-radius: 6px; }
+
+/* ==========================================================================
+1. Modal active state
+========================================================================== */
+.modal.is-active {
+  transform: scale(1); }
+  .modal.is-active .modal-background {
+    background: -webkit-linear-gradient(45deg, #6a85b6 0%, #bac8e0 100%);
+    background: linear-gradient(45deg, #6a85b6 0%, #bac8e0 100%);
+    background-color: #7189ff;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 10000px;
+    transition: all 0.5s;
+    transform: scale(0);
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 98 !important;
+    overflow: hidden !important; }
+    .modal.is-active .modal-background.scaleInCircle {
+      transform: scale(7); }
+  .modal.is-active .modal-content.scaleIn {
+    transform: scale(1);
+    opacity: 1; }
+  .modal.is-active .modal-close {
+    z-index: 100 !important; }
+  .modal.is-active.image-modal .modal-background {
+    background: -webkit-linear-gradient(45deg, #444F60, #444);
+    background: linear-gradient(45deg, #444F60, #444);
+    background-color: #444F60; }
+  .modal.is-active.image-modal img {
+    border-radius: 6px; }
+  .modal.is-active.image-modal .gallery-item figure {
+    background: none; }
+  .modal.is-active .modal-card .modal-card-head, .modal.is-active .modal-card .modal-card-foot {
+    padding: 15px; }
+  .modal.is-active .modal-card .modal-card-head {
+    background-color: #fff; }
+    .modal.is-active .modal-card .modal-card-head p {
+      color: #444F60; }
+    .modal.is-active .modal-card .modal-card-head .delete {
+      background: transparent !important;
+      transition: all 0.3s; }
+      .modal.is-active .modal-card .modal-card-head .delete:before {
+        background: #9fb4e7; }
+      .modal.is-active .modal-card .modal-card-head .delete:after {
+        background: #9fb4e7; }
+      .modal.is-active .modal-card .modal-card-head .delete:hover {
+        transform: rotate(135deg); }
+  .modal.is-active .modal-card .modal-card-body::-webkit-scrollbar {
+    width: 10px; }
+  .modal.is-active .modal-card .modal-card-body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2); }
+  .modal.is-active .modal-card .modal-card-foot {
+    background-color: #fff;
+    justify-content: flex-end;
+    border-top: none; }
+  .modal.is-active.modal-sm .modal-card-body {
+    max-height: 400px; }
+  .modal.is-active.modal-hero .modal-background {
+    background: -webkit-linear-gradient(to right, #9fb4e7, #758ecd);
+    background: linear-gradient(to right, #9fb4e7, #758ecd);
+    background-color: #758ecd; }
+  .modal.is-active.modal-success .modal-background {
+    background: #00b289; }
+  .modal.is-active.modal-error .modal-background {
+    background: #FF7273; }
+  .modal.is-active.modal-warning .modal-background {
+    background: #eda514; }
+  .modal.is-active.modal-info .modal-background {
+    background: #039BE5; }
+  .modal.is-active .modal-svg {
+    max-width: 110px;
+    margin: 0 auto !important; }
+
+/* ==========================================================================
+2. Media queries
+========================================================================== */
+@media screen and (min-width: 769px) {
+  .modal.modal-lg .modal-card, .modal.modal-lg .modal-content {
+    width: 800px !important; }
+
+  .modal.modal-md .modal-card, .modal.modal-md .modal-content {
+    width: 500px !important; }
+
+  .modal.modal-sm .modal-card, .modal.modal-sm .modal-content {
+    width: 400px !important; } }
+/* ==========================================================================
+2. Search Modal
+========================================================================== */
+#search-modal .modal-content {
+  padding: 30px 10px 0 10px; }
+  #search-modal .modal-content input {
+    color: #fff;
+    font-size: 2rem;
+    padding-right: 50px; }
+    #search-modal .modal-content input::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: #fff; }
+    #search-modal .modal-content input::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #fff; }
+    #search-modal .modal-content input:-ms-input-placeholder {
+      /* IE 10+ */
+      color: #fff; }
+    #search-modal .modal-content input:-moz-placeholder {
+      /* Firefox 18- */
+      color: #fff; }
+  #search-modal .modal-content svg {
+    font-size: 3rem;
+    right: 0;
+    top: 18px;
+    opacity: 0.7;
+    transition: 1s opacity; }
+    #search-modal .modal-content svg:hover {
+      cursor: pointer;
+      opacity: 1; }
+    #search-modal .modal-content svg path {
+      fill: #fff; }
+    #search-modal .modal-content svg [fill=none] {
+      fill: none !important; }
+#search-modal.is-active.modal-background {
+  margin-left: inherit !important;
+  margin-right: inherit !important;
+  right: 20px !important;
+  top: 20px !important;
+  bottom: inherit !important; }
+
+/*# sourceMappingURL=mws_modal.css.map */

@@ -1,0 +1,83 @@
+.switch[type="checkbox"] {
+    outline: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.switch[type="checkbox"]+label {
+    position: relative;
+    display: initial;
+    font-size: initial;
+    line-height: initial;
+    padding-left: 3.2rem;
+    padding-top: 0.05rem;
+    cursor: pointer;
+    display: block;
+}
+
+.switch[type="checkbox"]+label::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 1.05rem;
+    border: 0.1rem solid transparent;
+    border-radius: 100px;
+    background: #ededed;
+    content: "";
+    box-sizing: unset;
+}
+
+.switch[type="checkbox"]+label::after {
+    display: block;
+    position: absolute;
+    top: .2rem;
+    left: .3rem;
+    width: 0.87rem;
+    height: 0.85rem;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    border-radius: 100px;
+    background: #fff;
+    transition: all 0.25s ease-out;
+    content: "";
+    box-sizing: unset;
+}
+
+.switch[type="checkbox"]:checked+label::before {
+    background: #878787;
+}
+
+.switch[type="checkbox"]:checked+label::after {
+    left: 1.55rem;
+}
+
+.switch[type="checkbox"]+label+.switch-on {
+    display: none;
+}
+
+.switch[type="checkbox"]:checked+label+.switch-on {
+    display: block;
+}
+
+.switch[type="checkbox"]:checked+label+.switch-on+.switch-off {
+    display: none;
+}
+
+.field .switch[type="checkbox"]+label+.switch-on,
+.field .switch[type="checkbox"]+label+.switch-on+.switch-off {
+    padding-top: 0.3rem;
+}
+
+.fields-group > .field > .switch[type="checkbox"]:checked+label+.switch-on .field,
+.fields-group > .field > .switch[type="checkbox"]:checked+label+.switch-on+.switch-off .field {
+    padding-top: .5rem;
+}

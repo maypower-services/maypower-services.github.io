@@ -1,0 +1,47 @@
+.list-remove-item-placeholder {
+    width: 32px;
+    visibility: hidden;
+    margin-left: 20px;
+}
+
+.list-remove-item {
+    margin-left: 20px;
+}
+
+.simple-form .list > .button {
+    margin: -18px 0 0 -20px /*.5rem auto*/;
+    display: block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: rgb(237, 237, 237);
+    transition: all 0.3s ease 0s;
+    padding: 0;
+    transition: opacity 0.3s linear;
+    opacity: 0;
+    font-size: 28px;
+}
+
+.simple-form .list:hover > .button {
+    opacity: 1;
+}
+
+.simple-form .list > .button:hover {
+    background: rgb(255, 255, 255);
+}
+
+.simple-form .list > .button svg path:first-of-type {
+    fill: rgb(153, 153, 153);
+}
+
+.simple-form .list > .button:hover svg path:first-of-type {
+    fill: rgb(117, 142, 205);
+}
+
+/** responsiveness **/
+@media (max-width: 500px) {
+    .simple-form .list > .button {
+        opacity: 1 !important;
+    }
+}

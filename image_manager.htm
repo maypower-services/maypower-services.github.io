@@ -1,0 +1,155 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/mws_forms.css" rel="stylesheet">
+    <link href="css/mws_modal.css" rel="stylesheet">
+    <link href="css/mws_dropdown.css" rel="stylesheet">
+    <link href="css/app_body.css" rel="stylesheet">
+    <link href="css/image_manager.css" rel="stylesheet">
+
+    <link href="css/notyf.css" rel="stylesheet">
+    <script src="js/notyf.min.js"></script>
+    
+    <link href="yo/yo.css" rel="stylesheet">
+    <script type="text/javascript" src="yo/load.js"></script>
+    <script type="text/javascript" src="yo/validation.js"></script>
+    <script type="text/javascript" src="yo/price.js"></script>
+    <script type="text/javascript" src="yo/weight.js"></script>
+    <script type="text/javascript" src="yo/telephone.js"></script>
+    <script type="text/javascript" src="yo/image.js"></script>
+    <script type="text/javascript" src="yo/date.js"></script>
+    <script type="text/javascript" src="yo/select.js"></script>
+    <script type="text/javascript" src="yo/list.js"></script>
+    <script type="text/javascript" src="yo/yo.js"></script>
+
+    <script type="text/javascript" src="js/hotkeys.min.js"></script>
+    <script type="text/javascript" src="js/mws_commons.js"></script>
+    <script type="text/javascript" src="js/mws_modals.js"></script>
+    <script type="text/javascript" src="js/mws_dropdowns.js"></script>
+    <script type="text/javascript" src="js/app_body.js"></script>
+    <script type="text/javascript" src="js/list_view.js"></script>
+    <script type="text/javascript" src="js/page_create_template.js"></script>
+    
+    <title>MayPower Web Services</title>    
+  </head>
+  
+  <body>
+    <div id="mws-global-loading-overlay"><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div>
+
+    <button class="modal-close is-large" onclick="close_manager();" aria-label="close"></button>
+
+        <div class="content">
+
+        <div class="columns">
+            <div id="image-manager-card" class="column is-11">
+                <div class="flex-card simple-shadow">
+
+                    <div class="card-body">
+                        <div class="content">
+
+                            <div class="control-material has-icon">
+                              <input id="search" class="material-input" type="text" placeholder="Search stock photos or download from url..." required="" autofocus="">
+			      <i>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+				  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+				  <path d="M0 0h24v24H0z" fill="none"/>
+				</svg>
+			      </i>
+                              <span class="material-highlight"></span>
+                              <span class="bar"></span>
+                              <span id="search-feedback"></span>
+                            </div>
+
+                            <div id="image-list">
+                                <!-- Add image -->
+                                <!-- <div id="loading-spinner" class="column is-2"> -->
+                                <div id="loading-spinner" class="image-list-item" style="display: none;">
+                                    <div class="progress_bar"></div>
+                                    <div class="spinner">
+                                        <div class="double-bounce1"></div>
+                                        <div class="double-bounce2"></div>
+                                    </div>
+                                    {{lang_uploading}}...
+                                </div>
+
+                                <div id="add-image-button" class="image-list-item">
+                                    <div class="has-text-centered color-primary" onclick="document.getElementById('file').click();" style="cursor: pointer;">
+
+				      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+					<path d="M0 0h48v48H0z" fill="none"/>
+					<path fill="#7189ff" d="M26 14h-4v8h-8v4h8v8h4v-8h8v-4h-8v-8zM24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"/>
+				      </svg>
+
+                                      <p class="mt-10"><span id="lang-upload-image">Upload image</span></p>
+                                    </div>
+
+                                    <input id="file" style="display: none;" name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="image_id" multiple
+                                        data-form-data="{ &quot;upload_preset&quot;:  &quot;znssvcgq&quot;}" ></input>
+                                </div>
+                                <!-- /Add image -->
+
+				<div id="image_list"></div>
+
+                            </div>
+
+                            <div id="results"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="loading" style="display: none;"><img src="https://res.cloudinary.com/dlgtwbxmg/image/upload/v1534521527/Ellipsis-1s-200px.gif" width="30" alt=""></div>
+
+    <script src="utf8.js"></script><script src="bert.js"></script><script src="heart.js"></script><script src="ieee754.js"></script><script src="n2o.js"></script><script>host = location.hostname === 'sample.n2o.space' ? 'ns.synrc.com' : location.hostname; port = 8001;</script><script src="ftp.js"></script><script src="nitro.js"></script>
+    <script>$io.do = function(r) { console.log(r); };</script><script>protos = [$bert]; N2O_start();</script>
+    <script type="text/javascript">
+      var notyf = new Notyf();
+      // toastr fallback
+      var toastr = function() {};
+      toastr.error = function(msg) {console.log("error", msg);notyf.error(msg);};
+      toastr.info = function(msg) {notyf.info(msg);};
+      toastr.warning = function(msg) {notyf.warning(msg);};
+      toastr.success = function(msg) {console.log("success",msg); notyf.success(msg);};
+    </script>
+
+    <script src="js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- cloudinary -->
+    <script src="js/unsplash/dist/blueimp-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script>
+    <script src="js/unsplash/dist/blueimp-load-image/js/load-image.all.min.js"></script>
+    <script src="js/unsplash/dist/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+    <script src="js/unsplash/dist/blueimp-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script>
+    <script src="js/unsplash/dist/blueimp-file-upload/js/jquery.fileupload.js" type="text/javascript"></script>
+    <script src="js/unsplash/dist/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="js/unsplash/dist/blueimp-file-upload/js/jquery.fileupload-image.js" type="text/javascript"></script>
+    <script src="js/unsplash/dist/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="js/unsplash/dist/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      var exports = {};
+      $.cloudinary.config({cloud_name: 'dlgtwbxmg',secure: true});
+    </script>
+
+    <!-- masonry -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+
+    <script src="js/unsplash/dist/main.js"></script>
+    
+    <script src="js/image_manager.js" type="text/javascript"></script>
+
+  </body>
+  
+</html>

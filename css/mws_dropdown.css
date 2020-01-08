@@ -1,0 +1,264 @@
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+/*! layout/_colors.scss | Bulkit | CSS Ninja */
+/* ==========================================================================
+Bulkit general color variables
+========================================================================== */
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Bulkit colors
+1. State colors
+2. Social colors
+3. Predefined gradients
+4. Predefined box shadows
+=============================================================================
+***/
+/* ==========================================================================
+0. Bulkit colors
+========================================================================== */
+/* ==========================================================================
+1. State colors
+========================================================================== */
+/* ==========================================================================
+2. Social colors
+========================================================================== */
+/* ==========================================================================
+3. Predefined gradients
+========================================================================== */
+/* Chrome 10-25, Safari 5.1-6 */
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* ==========================================================================
+4. Predefined box shadows
+========================================================================== */
+/*! themes/_dashboard.scss | Bulkit | CSS Ninja */
+/* ==========================================================================
+Dashboard theme variables and styles (Dashboard theme is used in the Dashboard kit)
+========================================================================== */
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Bulkit colors
+1. State colors
+2. Social colors
+3. Predefined gradients
+4. Predefined box shadows
+=============================================================================
+***/
+/* ==========================================================================
+0. Theme color variables
+========================================================================== */
+/* ==========================================================================
+1. Theme gradient
+========================================================================== */
+/* ==========================================================================
+2. Box shadows
+========================================================================== */
+/* ==========================================================================
+3. Pageloader
+========================================================================== */
+.pageloader {
+  background: #758ecd !important; }
+
+.dropdown {
+  display: inline-flex;
+  position: relative;
+  vertical-align: top; }
+  .dropdown.is-active .dropdown-menu, .dropdown.is-hoverable:hover .dropdown-menu {
+    display: block; }
+  .dropdown.is-right .dropdown-menu {
+    left: auto;
+    right: 0; }
+  .dropdown.is-up .dropdown-menu {
+    bottom: 100%;
+    padding-bottom: 4px;
+    padding-top: initial;
+    top: auto; }
+
+.dropdown-menu {
+  display: none;
+  left: 0;
+  min-width: 12rem;
+  padding-top: 4px;
+  position: absolute;
+  top: 100%;
+  z-index: 20; }
+
+.dropdown-content {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem; }
+
+.dropdown-item {
+  color: #4a4a4a;
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.375rem 1rem;
+  position: relative; }
+
+.dropdown-item {
+  padding-right: 3rem;
+  text-align: left;
+  white-space: nowrap;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer; }
+  .dropdown-item:hover {
+    background-color: whitesmoke;
+    color: #0a0a0a; }
+  .dropdown-item.is-active {
+    background-color: #3273dc;
+    color: #fff; }
+
+.dropdown-item .is-danger {
+  color: #f14668; }
+
+.dropdown-divider {
+  background-color: #ededed;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 0.5rem 0; }
+
+/*! _dropdowns.scss | Bulkit | CSS Ninja */
+/* ==========================================================================
+Dropdown styles
+========================================================================== */
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Hover dropdowns
+1. jQuery Dropdowns
+=============================================================================
+***/
+/* ==========================================================================
+0. Hover dropdowns
+========================================================================== */
+.is-drop {
+  position: relative;
+  cursor: pointer; }
+  .is-drop i.sl-icon-arrow-down {
+    font-size: 8px !important;
+    top: 2px !important; }
+  .is-drop .drop-caret {
+    position: relative;
+    top: 5px; }
+  .is-drop .dropContain {
+    width: 220px;
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    margin-left: -165px;
+    /* 3/4 of width */
+    top: -500vh; }
+    .is-drop .dropContain .dropOut {
+      width: 220px;
+      background: #fff;
+      float: left;
+      position: relative;
+      margin-top: 15px;
+      opacity: 0;
+      border: 1px solid #ededed;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.04);
+      -moz-box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.04);
+      -webkit-transition: all .5s ease-out;
+      -moz-transition: all .5s ease-out;
+      -ms-transition: all .5s ease-out;
+      -o-transition: all .5s ease-out;
+      transition: all .5s ease-out; }
+    .is-drop .dropContain .dropOut .triangle {
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid #fff;
+      top: -8px;
+      left: 50%;
+      margin-left: -8px; }
+    .is-drop .dropContain .dropOut ul li {
+      text-align: left;
+      float: left;
+      width: 200px;
+      padding: 12px 0 10px 15px;
+      margin: 3px 10px;
+      color: #777;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-transition: background .2s ease-out;
+      -moz-transition: background .2s ease-out;
+      -ms-transition: background .2s ease-out;
+      -o-transition: background .2s ease-out;
+      transition: background .2s ease-out; }
+      .is-drop .dropContain .dropOut ul li:hover {
+        background: #EFF4F7;
+        cursor: pointer; }
+      .is-drop .dropContain .dropOut ul li i.drop-icon {
+        position: relative;
+        top: 4px;
+        margin-right: 15px; }
+      .is-drop .dropContain .dropOut ul li i.drop-icon.sl {
+        position: relative;
+        top: 0;
+        margin-right: 15px; }
+    .is-drop .dropContain .dropOut ul {
+      float: left;
+      padding: 10px 0;
+      list-style: none; }
+      .is-drop .dropContain .dropOut ul.big-icons li {
+        padding: 2px 0 10px 15px;
+        color: #A9ABAC; }
+      .is-drop .dropContain .dropOut ul.big-icons i.im {
+        font-size: 18px;
+        color: #A9ABAC;
+        margin-right: 10px;
+        position: relative;
+        top: 1px; }
+      .is-drop .dropContain .dropOut ul li.dropdown-divider {
+        padding: 0 !important;
+        border-radius: 0 !important;
+        height: 5px;
+        border-bottom: 1px solid #f2f2f2; }
+        .is-drop .dropContain .dropOut ul li.dropdown-divider:hover {
+          background-color: #fff; }
+    .is-drop .dropContain .dropOut.is-primary ul li:hover {
+      background: #7189ff;
+      color: #fff; }
+    .is-drop .dropContain .dropOut.is-secondary ul li:hover {
+      background: #758ecd;
+      color: #fff; }
+    .is-drop .dropContain .dropOut.is-accent ul li:hover {
+      background: #9fb4e7;
+      color: #fff; }
+  .is-drop:hover .dropContain {
+    top: 30px !important; }
+  .is-drop:hover .dropContain .dropOut {
+    animation: fadeInUp 0.27s ease-out;
+    opacity: 1; }
+  .is-drop.drop-sm:hover .dropContain {
+    top: 15px !important; }
+  .is-drop.is-centered .dropContain {
+    margin-left: -110px;
+    /* half of width */ }
+  .is-drop.is-right .dropContain {
+    margin-left: -55px;
+    /* quarter of width */ }
+
+button i.sl-icon-arrow-down {
+  font-size: 8px !important;
+  top: 2px !important;
+  padding-left: 8px !important; }
+
+/*# sourceMappingURL=mws_dropdown.css.map */
