@@ -133,7 +133,7 @@
 /* Small screens */
 @media only screen and (max-width: 480px) {
   .notyf {
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     align-items: initial; }
