@@ -456,6 +456,7 @@
 .simple-form .submit-wrap {
     padding-top: 30px;
     padding-bottom: 30px;
+    margin-top: 20px;
     border-top: 1px solid #e5e5e5;
     text-align: right;
 }

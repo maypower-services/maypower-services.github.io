@@ -3,7 +3,7 @@
     transform: rotate(0deg); }
   to {
     transform: rotate(359deg); } }
-#top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar .select:not(.is-multiple):not(.is-loading)::after {
+#top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar .select:not(.is-multiple):not(.is-loading)::after, #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
   border: 3px solid transparent;
   border-radius: 2px;
   border-right: 0;
@@ -22,7 +22,7 @@
 #app-wrapper .level:not(:last-child) {
   margin-bottom: 1.5rem; }
 
-#top-navbar .select.is-loading::after {
+#top-navbar .select.is-loading::after, #app-wrapper .select.is-loading::after {
   animation: spinAround 500ms infinite linear;
   border: 2px solid #dbdbdb;
   border-radius: 290486px;
@@ -34,7 +34,7 @@
   position: relative;
   width: 1em; }
 
-#top-navbar .select select {
+#top-navbar .select select, #app-wrapper .select select {
   -moz-appearance: none;
   -webkit-appearance: none;
   align-items: center;
@@ -52,9 +52,9 @@
   padding-top: calc(0.5em - 1px);
   position: relative;
   vertical-align: top; }
-  #top-navbar .select select:focus, #top-navbar .select select.is-focused, #top-navbar .select select:active, #top-navbar .select select.is-active {
+  #top-navbar .select select:focus, #app-wrapper .select select:focus, #top-navbar .select select.is-focused, #app-wrapper .select select.is-focused, #top-navbar .select select:active, #app-wrapper .select select:active, #top-navbar .select select.is-active, #app-wrapper .select select.is-active {
     outline: none; }
-  #top-navbar .select select[disabled], fieldset[disabled] #top-navbar .select select, #top-navbar .select fieldset[disabled] select {
+  #top-navbar .select select[disabled], #app-wrapper .select select[disabled], fieldset[disabled] #top-navbar .select select, #top-navbar .select fieldset[disabled] select, fieldset[disabled] #app-wrapper .select select, #app-wrapper .select fieldset[disabled] select {
     cursor: not-allowed; }
 
 /*! layout/_colors.scss | Bulkit | CSS Ninja */
@@ -122,7 +122,7 @@ TABLE OF CONTENTS
     transform: rotate(0deg); }
   to {
     transform: rotate(359deg); } }
-#top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar .select:not(.is-multiple):not(.is-loading)::after {
+#top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar .select:not(.is-multiple):not(.is-loading)::after, #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
   border: 3px solid transparent;
   border-radius: 2px;
   border-right: 0;
@@ -141,7 +141,7 @@ TABLE OF CONTENTS
 #app-wrapper .level:not(:last-child) {
   margin-bottom: 1.5rem; }
 
-#top-navbar .select.is-loading::after {
+#top-navbar .select.is-loading::after, #app-wrapper .select.is-loading::after {
   animation: spinAround 500ms infinite linear;
   border: 2px solid #dbdbdb;
   border-radius: 290486px;
@@ -153,7 +153,7 @@ TABLE OF CONTENTS
   position: relative;
   width: 1em; }
 
-#top-navbar .select select {
+#top-navbar .select select, #app-wrapper .select select {
   -moz-appearance: none;
   -webkit-appearance: none;
   align-items: center;
@@ -171,9 +171,9 @@ TABLE OF CONTENTS
   padding-top: calc(0.5em - 1px);
   position: relative;
   vertical-align: top; }
-  #top-navbar .select select:focus, #top-navbar .select select.is-focused, #top-navbar .select select:active, #top-navbar .select select.is-active {
+  #top-navbar .select select:focus, #app-wrapper .select select:focus, #top-navbar .select select.is-focused, #app-wrapper .select select.is-focused, #top-navbar .select select:active, #app-wrapper .select select:active, #top-navbar .select select.is-active, #app-wrapper .select select.is-active {
     outline: none; }
-  #top-navbar .select select[disabled], fieldset[disabled] #top-navbar .select select, #top-navbar .select fieldset[disabled] select {
+  #top-navbar .select select[disabled], #app-wrapper .select select[disabled], fieldset[disabled] #top-navbar .select select, #top-navbar .select fieldset[disabled] select, fieldset[disabled] #app-wrapper .select select, #app-wrapper .select fieldset[disabled] select {
     cursor: not-allowed; }
 
 /*! layout/_colors.scss | Bulkit | CSS Ninja */
@@ -1070,7 +1070,7 @@ body {
     height: 1em;
     position: relative;
     width: 1em; }
-  #top-navbar .select select {
+  #top-navbar .select select, #app-wrapper .select #top-navbar select {
     -moz-appearance: none;
     -webkit-appearance: none;
     align-items: center;
@@ -1088,9 +1088,9 @@ body {
     padding-top: calc(0.5em - 1px);
     position: relative;
     vertical-align: top; }
-    #top-navbar .select select:focus, #top-navbar .select select.is-focused, #top-navbar .select select:active, #top-navbar .select select.is-active {
+    #top-navbar .select select:focus, #app-wrapper .select #top-navbar select:focus, #top-navbar .select select.is-focused, #app-wrapper .select #top-navbar select.is-focused, #top-navbar .select select:active, #app-wrapper .select #top-navbar select:active, #top-navbar .select select.is-active, #app-wrapper .select #top-navbar select.is-active {
       outline: none; }
-    #top-navbar .select select[disabled], fieldset[disabled] #top-navbar .select select {
+    #top-navbar .select select[disabled], #app-wrapper .select #top-navbar select[disabled], fieldset[disabled] #top-navbar .select select, fieldset[disabled] #app-wrapper .select #top-navbar select, #app-wrapper .select fieldset[disabled] #top-navbar select {
       cursor: not-allowed; }
   #top-navbar .pageloader {
     background: #758ecd !important; }
@@ -2812,7 +2812,7 @@ body {
     height: 1em;
     position: relative;
     width: 1em; }
-  #top-navbar .select select {
+  #top-navbar .select select, #app-wrapper .select #top-navbar select {
     -moz-appearance: none;
     -webkit-appearance: none;
     align-items: center;
@@ -2830,9 +2830,9 @@ body {
     padding-top: calc(0.5em - 1px);
     position: relative;
     vertical-align: top; }
-    #top-navbar .select select:focus, #top-navbar .select select.is-focused, #top-navbar .select select:active, #top-navbar .select select.is-active {
+    #top-navbar .select select:focus, #app-wrapper .select #top-navbar select:focus, #top-navbar .select select.is-focused, #app-wrapper .select #top-navbar select.is-focused, #top-navbar .select select:active, #app-wrapper .select #top-navbar select:active, #top-navbar .select select.is-active, #app-wrapper .select #top-navbar select.is-active {
       outline: none; }
-    #top-navbar .select select[disabled], fieldset[disabled] #top-navbar .select select {
+    #top-navbar .select select[disabled], #app-wrapper .select #top-navbar select[disabled], fieldset[disabled] #top-navbar .select select, fieldset[disabled] #app-wrapper .select #top-navbar select, #app-wrapper .select fieldset[disabled] #top-navbar select {
       cursor: not-allowed; }
   #top-navbar .pageloader {
     background: #758ecd !important; }
@@ -3494,36 +3494,36 @@ body {
     #top-navbar .profile-container .profile-sections-wrapper #profile-team .team-card:hover {
       box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
       transform: scale(1.01); }
-  #top-navbar .select select {
+  #top-navbar .select select, #app-wrapper .select #top-navbar select {
     background-color: white;
     border-color: #dbdbdb;
     border-radius: 4px;
     color: #363636; }
-    #top-navbar .select select::-moz-placeholder {
+    #top-navbar .select select::-moz-placeholder, #app-wrapper .select #top-navbar select::-moz-placeholder {
       color: rgba(54, 54, 54, 0.3); }
-    #top-navbar .select select::-webkit-input-placeholder {
+    #top-navbar .select select::-webkit-input-placeholder, #app-wrapper .select #top-navbar select::-webkit-input-placeholder {
       color: rgba(54, 54, 54, 0.3); }
-    #top-navbar .select select:-moz-placeholder {
+    #top-navbar .select select:-moz-placeholder, #app-wrapper .select #top-navbar select:-moz-placeholder {
       color: rgba(54, 54, 54, 0.3); }
-    #top-navbar .select select:-ms-input-placeholder {
+    #top-navbar .select select:-ms-input-placeholder, #app-wrapper .select #top-navbar select:-ms-input-placeholder {
       color: rgba(54, 54, 54, 0.3); }
-    #top-navbar .select select:hover, #top-navbar .select select.is-hovered {
+    #top-navbar .select select:hover, #app-wrapper .select #top-navbar select:hover, #top-navbar .select select.is-hovered, #app-wrapper .select #top-navbar select.is-hovered {
       border-color: #b5b5b5; }
-    #top-navbar .select select:focus, #top-navbar .select select.is-focused, #top-navbar .select select:active, #top-navbar .select select.is-active {
+    #top-navbar .select select:focus, #app-wrapper .select #top-navbar select:focus, #top-navbar .select select.is-focused, #app-wrapper .select #top-navbar select.is-focused, #top-navbar .select select:active, #app-wrapper .select #top-navbar select:active, #top-navbar .select select.is-active, #app-wrapper .select #top-navbar select.is-active {
       border-color: #3273dc;
       box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25); }
-    #top-navbar .select select[disabled], fieldset[disabled] #top-navbar .select select {
+    #top-navbar .select select[disabled], #app-wrapper .select #top-navbar select[disabled], fieldset[disabled] #top-navbar .select select, #app-wrapper .select fieldset[disabled] #top-navbar select {
       background-color: whitesmoke;
       border-color: whitesmoke;
       box-shadow: none;
       color: #7a7a7a; }
-      #top-navbar .select select[disabled]::-moz-placeholder, fieldset[disabled] #top-navbar .select select::-moz-placeholder {
+      #top-navbar .select select[disabled]::-moz-placeholder, #app-wrapper .select #top-navbar select[disabled]::-moz-placeholder, fieldset[disabled] #top-navbar .select select::-moz-placeholder, #app-wrapper .select fieldset[disabled] #top-navbar select::-moz-placeholder {
         color: rgba(122, 122, 122, 0.3); }
-      #top-navbar .select select[disabled]::-webkit-input-placeholder, fieldset[disabled] #top-navbar .select select::-webkit-input-placeholder {
+      #top-navbar .select select[disabled]::-webkit-input-placeholder, #app-wrapper .select #top-navbar select[disabled]::-webkit-input-placeholder, fieldset[disabled] #top-navbar .select select::-webkit-input-placeholder, #app-wrapper .select fieldset[disabled] #top-navbar select::-webkit-input-placeholder {
         color: rgba(122, 122, 122, 0.3); }
-      #top-navbar .select select[disabled]:-moz-placeholder, fieldset[disabled] #top-navbar .select select:-moz-placeholder {
+      #top-navbar .select select[disabled]:-moz-placeholder, #app-wrapper .select #top-navbar select[disabled]:-moz-placeholder, fieldset[disabled] #top-navbar .select select:-moz-placeholder, #app-wrapper .select fieldset[disabled] #top-navbar select:-moz-placeholder {
         color: rgba(122, 122, 122, 0.3); }
-      #top-navbar .select select[disabled]:-ms-input-placeholder, fieldset[disabled] #top-navbar .select select:-ms-input-placeholder {
+      #top-navbar .select select[disabled]:-ms-input-placeholder, #app-wrapper .select #top-navbar select[disabled]:-ms-input-placeholder, fieldset[disabled] #top-navbar .select select:-ms-input-placeholder, #app-wrapper .select fieldset[disabled] #top-navbar select:-ms-input-placeholder {
         color: rgba(122, 122, 122, 0.3); }
   #top-navbar .select {
     display: inline-block;
@@ -5364,43 +5364,181 @@ body {
     @media screen and (min-width: 769px), print {
       #app-wrapper .level-right {
         display: flex; } }
-  #app-wrapper #top-navbar .select select, #top-navbar .select #app-wrapper select {
+  #top-navbar .select #app-wrapper select, #app-wrapper .select select {
     background-color: white;
     border-color: #dbdbdb;
     border-radius: 4px;
     color: #363636; }
-    #app-wrapper #top-navbar .select select::-moz-placeholder, #top-navbar .select #app-wrapper select::-moz-placeholder {
+    #top-navbar .select #app-wrapper select::-moz-placeholder, #app-wrapper .select select::-moz-placeholder {
       color: rgba(54, 54, 54, 0.3); }
-    #app-wrapper #top-navbar .select select::-webkit-input-placeholder, #top-navbar .select #app-wrapper select::-webkit-input-placeholder {
+    #top-navbar .select #app-wrapper select::-webkit-input-placeholder, #app-wrapper .select select::-webkit-input-placeholder {
       color: rgba(54, 54, 54, 0.3); }
-    #app-wrapper #top-navbar .select select:-moz-placeholder, #top-navbar .select #app-wrapper select:-moz-placeholder {
+    #top-navbar .select #app-wrapper select:-moz-placeholder, #app-wrapper .select select:-moz-placeholder {
       color: rgba(54, 54, 54, 0.3); }
-    #app-wrapper #top-navbar .select select:-ms-input-placeholder, #top-navbar .select #app-wrapper select:-ms-input-placeholder {
+    #top-navbar .select #app-wrapper select:-ms-input-placeholder, #app-wrapper .select select:-ms-input-placeholder {
       color: rgba(54, 54, 54, 0.3); }
-    #app-wrapper #top-navbar .select select:hover, #top-navbar .select #app-wrapper select:hover, #app-wrapper #top-navbar .select select.is-hovered, #top-navbar .select #app-wrapper select.is-hovered {
+    #top-navbar .select #app-wrapper select:hover, #app-wrapper .select select:hover, #top-navbar .select #app-wrapper select.is-hovered, #app-wrapper .select select.is-hovered {
       border-color: #b5b5b5; }
-    #app-wrapper #top-navbar .select select:focus, #top-navbar .select #app-wrapper select:focus, #app-wrapper #top-navbar .select select.is-focused, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper #top-navbar .select select:active, #top-navbar .select #app-wrapper select:active, #app-wrapper #top-navbar .select select.is-active, #top-navbar .select #app-wrapper select.is-active {
+    #top-navbar .select #app-wrapper select:focus, #app-wrapper .select select:focus, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper .select select.is-focused, #top-navbar .select #app-wrapper select:active, #app-wrapper .select select:active, #top-navbar .select #app-wrapper select.is-active, #app-wrapper .select select.is-active {
       border-color: #3273dc;
       box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25); }
-    #app-wrapper #top-navbar .select select[disabled], #top-navbar .select #app-wrapper select[disabled], fieldset[disabled] #app-wrapper #top-navbar .select select, #top-navbar .select fieldset[disabled] #app-wrapper select {
+    #top-navbar .select #app-wrapper select[disabled], #app-wrapper .select select[disabled], #top-navbar .select fieldset[disabled] #app-wrapper select, fieldset[disabled] #app-wrapper .select select {
       background-color: whitesmoke;
       border-color: whitesmoke;
       box-shadow: none;
       color: #7a7a7a; }
-      #app-wrapper #top-navbar .select select[disabled]::-moz-placeholder, #top-navbar .select #app-wrapper select[disabled]::-moz-placeholder, fieldset[disabled] #app-wrapper #top-navbar .select select::-moz-placeholder, #top-navbar .select fieldset[disabled] #app-wrapper select::-moz-placeholder {
+      #top-navbar .select #app-wrapper select[disabled]::-moz-placeholder, #app-wrapper .select select[disabled]::-moz-placeholder, #top-navbar .select fieldset[disabled] #app-wrapper select::-moz-placeholder, fieldset[disabled] #app-wrapper .select select::-moz-placeholder {
         color: rgba(122, 122, 122, 0.3); }
-      #app-wrapper #top-navbar .select select[disabled]::-webkit-input-placeholder, #top-navbar .select #app-wrapper select[disabled]::-webkit-input-placeholder, fieldset[disabled] #app-wrapper #top-navbar .select select::-webkit-input-placeholder, #top-navbar .select fieldset[disabled] #app-wrapper select::-webkit-input-placeholder {
+      #top-navbar .select #app-wrapper select[disabled]::-webkit-input-placeholder, #app-wrapper .select select[disabled]::-webkit-input-placeholder, #top-navbar .select fieldset[disabled] #app-wrapper select::-webkit-input-placeholder, fieldset[disabled] #app-wrapper .select select::-webkit-input-placeholder {
         color: rgba(122, 122, 122, 0.3); }
-      #app-wrapper #top-navbar .select select[disabled]:-moz-placeholder, #top-navbar .select #app-wrapper select[disabled]:-moz-placeholder, fieldset[disabled] #app-wrapper #top-navbar .select select:-moz-placeholder, #top-navbar .select fieldset[disabled] #app-wrapper select:-moz-placeholder {
+      #top-navbar .select #app-wrapper select[disabled]:-moz-placeholder, #app-wrapper .select select[disabled]:-moz-placeholder, #top-navbar .select fieldset[disabled] #app-wrapper select:-moz-placeholder, fieldset[disabled] #app-wrapper .select select:-moz-placeholder {
         color: rgba(122, 122, 122, 0.3); }
-      #app-wrapper #top-navbar .select select[disabled]:-ms-input-placeholder, #top-navbar .select #app-wrapper select[disabled]:-ms-input-placeholder, fieldset[disabled] #app-wrapper #top-navbar .select select:-ms-input-placeholder, #top-navbar .select fieldset[disabled] #app-wrapper select:-ms-input-placeholder {
+      #top-navbar .select #app-wrapper select[disabled]:-ms-input-placeholder, #app-wrapper .select select[disabled]:-ms-input-placeholder, #top-navbar .select fieldset[disabled] #app-wrapper select:-ms-input-placeholder, fieldset[disabled] #app-wrapper .select select:-ms-input-placeholder {
         color: rgba(122, 122, 122, 0.3); }
+  #app-wrapper .select {
+    display: inline-block;
+    max-width: 100%;
+    position: relative;
+    vertical-align: top; }
+    #app-wrapper .select:not(.is-multiple) {
+      height: 2.5em; }
+    #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
+      border-color: #3273dc;
+      right: 1.125em;
+      z-index: 4; }
+    #app-wrapper .select.is-rounded select {
+      border-radius: 290486px;
+      padding-left: 1em; }
+    #app-wrapper .select select {
+      cursor: pointer;
+      display: block;
+      font-size: 1em;
+      max-width: 100%;
+      outline: none; }
+      #app-wrapper .select select::-ms-expand {
+        display: none; }
+      #app-wrapper .select select[disabled]:hover, fieldset[disabled] #app-wrapper .select select:hover {
+        border-color: whitesmoke; }
+      #app-wrapper .select select:not([multiple]) {
+        padding-right: 2.5em; }
+      #app-wrapper .select select[multiple] {
+        height: auto;
+        padding: 0; }
+        #app-wrapper .select select[multiple] option {
+          padding: 0.5em 1em; }
+    #app-wrapper .select:not(.is-multiple):not(.is-loading):hover::after {
+      border-color: #363636; }
+    #app-wrapper .select.is-white:not(:hover)::after {
+      border-color: white; }
+    #app-wrapper .select.is-white select {
+      border-color: white; }
+      #app-wrapper .select.is-white select:hover, #app-wrapper .select.is-white select.is-hovered {
+        border-color: #f2f2f2; }
+      #app-wrapper .select.is-white select:focus, #app-wrapper .select.is-white select.is-focused, #app-wrapper .select.is-white select:active, #app-wrapper .select.is-white select.is-active {
+        box-shadow: 0 0 0 0.125em rgba(255, 255, 255, 0.25); }
+    #app-wrapper .select.is-black:not(:hover)::after {
+      border-color: #0a0a0a; }
+    #app-wrapper .select.is-black select {
+      border-color: #0a0a0a; }
+      #app-wrapper .select.is-black select:hover, #app-wrapper .select.is-black select.is-hovered {
+        border-color: black; }
+      #app-wrapper .select.is-black select:focus, #app-wrapper .select.is-black select.is-focused, #app-wrapper .select.is-black select:active, #app-wrapper .select.is-black select.is-active {
+        box-shadow: 0 0 0 0.125em rgba(10, 10, 10, 0.25); }
+    #app-wrapper .select.is-light:not(:hover)::after {
+      border-color: whitesmoke; }
+    #app-wrapper .select.is-light select {
+      border-color: whitesmoke; }
+      #app-wrapper .select.is-light select:hover, #app-wrapper .select.is-light select.is-hovered {
+        border-color: #e8e8e8; }
+      #app-wrapper .select.is-light select:focus, #app-wrapper .select.is-light select.is-focused, #app-wrapper .select.is-light select:active, #app-wrapper .select.is-light select.is-active {
+        box-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25); }
+    #app-wrapper .select.is-dark:not(:hover)::after {
+      border-color: #363636; }
+    #app-wrapper .select.is-dark select {
+      border-color: #363636; }
+      #app-wrapper .select.is-dark select:hover, #app-wrapper .select.is-dark select.is-hovered {
+        border-color: #292929; }
+      #app-wrapper .select.is-dark select:focus, #app-wrapper .select.is-dark select.is-focused, #app-wrapper .select.is-dark select:active, #app-wrapper .select.is-dark select.is-active {
+        box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25); }
+    #app-wrapper .select.is-primary:not(:hover)::after {
+      border-color: #00d1b2; }
+    #app-wrapper .select.is-primary select {
+      border-color: #00d1b2; }
+      #app-wrapper .select.is-primary select:hover, #app-wrapper .select.is-primary select.is-hovered {
+        border-color: #00b89c; }
+      #app-wrapper .select.is-primary select:focus, #app-wrapper .select.is-primary select.is-focused, #app-wrapper .select.is-primary select:active, #app-wrapper .select.is-primary select.is-active {
+        box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25); }
+    #app-wrapper .select.is-link:not(:hover)::after {
+      border-color: #3273dc; }
+    #app-wrapper .select.is-link select {
+      border-color: #3273dc; }
+      #app-wrapper .select.is-link select:hover, #app-wrapper .select.is-link select.is-hovered {
+        border-color: #2366d1; }
+      #app-wrapper .select.is-link select:focus, #app-wrapper .select.is-link select.is-focused, #app-wrapper .select.is-link select:active, #app-wrapper .select.is-link select.is-active {
+        box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25); }
+    #app-wrapper .select.is-info:not(:hover)::after {
+      border-color: #3298dc; }
+    #app-wrapper .select.is-info select {
+      border-color: #3298dc; }
+      #app-wrapper .select.is-info select:hover, #app-wrapper .select.is-info select.is-hovered {
+        border-color: #238cd1; }
+      #app-wrapper .select.is-info select:focus, #app-wrapper .select.is-info select.is-focused, #app-wrapper .select.is-info select:active, #app-wrapper .select.is-info select.is-active {
+        box-shadow: 0 0 0 0.125em rgba(50, 152, 220, 0.25); }
+    #app-wrapper .select.is-success:not(:hover)::after {
+      border-color: #48c774; }
+    #app-wrapper .select.is-success select {
+      border-color: #48c774; }
+      #app-wrapper .select.is-success select:hover, #app-wrapper .select.is-success select.is-hovered {
+        border-color: #3abb67; }
+      #app-wrapper .select.is-success select:focus, #app-wrapper .select.is-success select.is-focused, #app-wrapper .select.is-success select:active, #app-wrapper .select.is-success select.is-active {
+        box-shadow: 0 0 0 0.125em rgba(72, 199, 116, 0.25); }
+    #app-wrapper .select.is-warning:not(:hover)::after {
+      border-color: #ffdd57; }
+    #app-wrapper .select.is-warning select {
+      border-color: #ffdd57; }
+      #app-wrapper .select.is-warning select:hover, #app-wrapper .select.is-warning select.is-hovered {
+        border-color: #ffd83d; }
+      #app-wrapper .select.is-warning select:focus, #app-wrapper .select.is-warning select.is-focused, #app-wrapper .select.is-warning select:active, #app-wrapper .select.is-warning select.is-active {
+        box-shadow: 0 0 0 0.125em rgba(255, 221, 87, 0.25); }
+    #app-wrapper .select.is-danger:not(:hover)::after {
+      border-color: #f14668; }
+    #app-wrapper .select.is-danger select {
+      border-color: #f14668; }
+      #app-wrapper .select.is-danger select:hover, #app-wrapper .select.is-danger select.is-hovered {
+        border-color: #ef2e55; }
+      #app-wrapper .select.is-danger select:focus, #app-wrapper .select.is-danger select.is-focused, #app-wrapper .select.is-danger select:active, #app-wrapper .select.is-danger select.is-active {
+        box-shadow: 0 0 0 0.125em rgba(241, 70, 104, 0.25); }
+    #app-wrapper .select.is-small {
+      border-radius: 2px;
+      font-size: 0.75rem; }
+    #app-wrapper .select.is-medium {
+      font-size: 1.25rem; }
+    #app-wrapper .select.is-large {
+      font-size: 1.5rem; }
+    #app-wrapper .select.is-disabled::after {
+      border-color: #7a7a7a; }
+    #app-wrapper .select.is-fullwidth {
+      width: 100%; }
+      #app-wrapper .select.is-fullwidth select {
+        width: 100%; }
+    #app-wrapper .select.is-loading::after {
+      margin-top: 0;
+      position: absolute;
+      right: 0.625em;
+      top: 0.625em;
+      transform: none; }
+    #app-wrapper .select.is-loading.is-small:after {
+      font-size: 0.75rem; }
+    #app-wrapper .select.is-loading.is-medium:after {
+      font-size: 1.25rem; }
+    #app-wrapper .select.is-loading.is-large:after {
+      font-size: 1.5rem; }
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
   to {
     transform: rotate(359deg); } }
-  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper #top-navbar .select:not(.is-multiple):not(.is-loading)::after, #top-navbar #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
+  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
     border: 3px solid transparent;
     border-radius: 2px;
     border-right: 0;
@@ -5417,7 +5555,7 @@ body {
     width: 0.625em; }
   #app-wrapper .level:not(:last-child) {
     margin-bottom: 1.5rem; }
-  #app-wrapper #top-navbar .select.is-loading::after, #top-navbar #app-wrapper .select.is-loading::after {
+  #app-wrapper .select.is-loading::after {
     animation: spinAround 500ms infinite linear;
     border: 2px solid #dbdbdb;
     border-radius: 290486px;
@@ -5428,7 +5566,7 @@ body {
     height: 1em;
     position: relative;
     width: 1em; }
-  #app-wrapper #top-navbar .select select, #top-navbar .select #app-wrapper select {
+  #top-navbar .select #app-wrapper select, #app-wrapper .select select {
     -moz-appearance: none;
     -webkit-appearance: none;
     align-items: center;
@@ -5446,9 +5584,9 @@ body {
     padding-top: calc(0.5em - 1px);
     position: relative;
     vertical-align: top; }
-    #app-wrapper #top-navbar .select select:focus, #top-navbar .select #app-wrapper select:focus, #app-wrapper #top-navbar .select select.is-focused, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper #top-navbar .select select:active, #top-navbar .select #app-wrapper select:active, #app-wrapper #top-navbar .select select.is-active, #top-navbar .select #app-wrapper select.is-active {
+    #top-navbar .select #app-wrapper select:focus, #app-wrapper .select select:focus, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper .select select.is-focused, #top-navbar .select #app-wrapper select:active, #app-wrapper .select select:active, #top-navbar .select #app-wrapper select.is-active, #app-wrapper .select select.is-active {
       outline: none; }
-    #app-wrapper #top-navbar .select select[disabled], #top-navbar .select #app-wrapper select[disabled], fieldset[disabled] #app-wrapper #top-navbar .select select, fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select {
+    #top-navbar .select #app-wrapper select[disabled], #app-wrapper .select select[disabled], fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select, fieldset[disabled] #app-wrapper .select select {
       cursor: not-allowed; }
   #app-wrapper .pageloader {
     background: #758ecd !important; }
@@ -6027,7 +6165,7 @@ body {
     transform: rotate(0deg); }
   to {
     transform: rotate(359deg); } }
-  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper #top-navbar .select:not(.is-multiple):not(.is-loading)::after, #top-navbar #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
+  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
     border: 3px solid transparent;
     border-radius: 2px;
     border-right: 0;
@@ -6044,7 +6182,7 @@ body {
     width: 0.625em; }
   #app-wrapper .level:not(:last-child) {
     margin-bottom: 1.5rem; }
-  #app-wrapper #top-navbar .select.is-loading::after, #top-navbar #app-wrapper .select.is-loading::after {
+  #app-wrapper .select.is-loading::after {
     animation: spinAround 500ms infinite linear;
     border: 2px solid #dbdbdb;
     border-radius: 290486px;
@@ -6055,7 +6193,7 @@ body {
     height: 1em;
     position: relative;
     width: 1em; }
-  #app-wrapper #top-navbar .select select, #top-navbar .select #app-wrapper select {
+  #top-navbar .select #app-wrapper select, #app-wrapper .select select {
     -moz-appearance: none;
     -webkit-appearance: none;
     align-items: center;
@@ -6073,9 +6211,9 @@ body {
     padding-top: calc(0.5em - 1px);
     position: relative;
     vertical-align: top; }
-    #app-wrapper #top-navbar .select select:focus, #top-navbar .select #app-wrapper select:focus, #app-wrapper #top-navbar .select select.is-focused, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper #top-navbar .select select:active, #top-navbar .select #app-wrapper select:active, #app-wrapper #top-navbar .select select.is-active, #top-navbar .select #app-wrapper select.is-active {
+    #top-navbar .select #app-wrapper select:focus, #app-wrapper .select select:focus, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper .select select.is-focused, #top-navbar .select #app-wrapper select:active, #app-wrapper .select select:active, #top-navbar .select #app-wrapper select.is-active, #app-wrapper .select select.is-active {
       outline: none; }
-    #app-wrapper #top-navbar .select select[disabled], #top-navbar .select #app-wrapper select[disabled], fieldset[disabled] #app-wrapper #top-navbar .select select, fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select {
+    #top-navbar .select #app-wrapper select[disabled], #app-wrapper .select select[disabled], fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select, fieldset[disabled] #app-wrapper .select select {
       cursor: not-allowed; }
   #app-wrapper .pageloader {
     background: #758ecd !important; }
@@ -6122,7 +6260,7 @@ body {
     transform: rotate(0deg); }
   to {
     transform: rotate(359deg); } }
-  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper #top-navbar .select:not(.is-multiple):not(.is-loading)::after, #top-navbar #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
+  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
     border: 3px solid transparent;
     border-radius: 2px;
     border-right: 0;
@@ -6139,7 +6277,7 @@ body {
     width: 0.625em; }
   #app-wrapper .level:not(:last-child) {
     margin-bottom: 1.5rem; }
-  #app-wrapper #top-navbar .select.is-loading::after, #top-navbar #app-wrapper .select.is-loading::after {
+  #app-wrapper .select.is-loading::after {
     animation: spinAround 500ms infinite linear;
     border: 2px solid #dbdbdb;
     border-radius: 290486px;
@@ -6150,7 +6288,7 @@ body {
     height: 1em;
     position: relative;
     width: 1em; }
-  #app-wrapper #top-navbar .select select, #top-navbar .select #app-wrapper select {
+  #top-navbar .select #app-wrapper select, #app-wrapper .select select {
     -moz-appearance: none;
     -webkit-appearance: none;
     align-items: center;
@@ -6168,9 +6306,9 @@ body {
     padding-top: calc(0.5em - 1px);
     position: relative;
     vertical-align: top; }
-    #app-wrapper #top-navbar .select select:focus, #top-navbar .select #app-wrapper select:focus, #app-wrapper #top-navbar .select select.is-focused, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper #top-navbar .select select:active, #top-navbar .select #app-wrapper select:active, #app-wrapper #top-navbar .select select.is-active, #top-navbar .select #app-wrapper select.is-active {
+    #top-navbar .select #app-wrapper select:focus, #app-wrapper .select select:focus, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper .select select.is-focused, #top-navbar .select #app-wrapper select:active, #app-wrapper .select select:active, #top-navbar .select #app-wrapper select.is-active, #app-wrapper .select select.is-active {
       outline: none; }
-    #app-wrapper #top-navbar .select select[disabled], #top-navbar .select #app-wrapper select[disabled], fieldset[disabled] #app-wrapper #top-navbar .select select, fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select {
+    #top-navbar .select #app-wrapper select[disabled], #app-wrapper .select select[disabled], fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select, fieldset[disabled] #app-wrapper .select select {
       cursor: not-allowed; }
   #app-wrapper .pageloader {
     background: #758ecd !important; }
@@ -6919,7 +7057,7 @@ body {
     transform: rotate(0deg); }
   to {
     transform: rotate(359deg); } }
-  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper #top-navbar .select:not(.is-multiple):not(.is-loading)::after, #top-navbar #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
+  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
     border: 3px solid transparent;
     border-radius: 2px;
     border-right: 0;
@@ -6936,7 +7074,7 @@ body {
     width: 0.625em; }
   #app-wrapper .level:not(:last-child) {
     margin-bottom: 1.5rem; }
-  #app-wrapper #top-navbar .select.is-loading::after, #top-navbar #app-wrapper .select.is-loading::after {
+  #app-wrapper .select.is-loading::after {
     animation: spinAround 500ms infinite linear;
     border: 2px solid #dbdbdb;
     border-radius: 290486px;
@@ -6947,7 +7085,7 @@ body {
     height: 1em;
     position: relative;
     width: 1em; }
-  #app-wrapper #top-navbar .select select, #top-navbar .select #app-wrapper select {
+  #top-navbar .select #app-wrapper select, #app-wrapper .select select {
     -moz-appearance: none;
     -webkit-appearance: none;
     align-items: center;
@@ -6965,9 +7103,9 @@ body {
     padding-top: calc(0.5em - 1px);
     position: relative;
     vertical-align: top; }
-    #app-wrapper #top-navbar .select select:focus, #top-navbar .select #app-wrapper select:focus, #app-wrapper #top-navbar .select select.is-focused, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper #top-navbar .select select:active, #top-navbar .select #app-wrapper select:active, #app-wrapper #top-navbar .select select.is-active, #top-navbar .select #app-wrapper select.is-active {
+    #top-navbar .select #app-wrapper select:focus, #app-wrapper .select select:focus, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper .select select.is-focused, #top-navbar .select #app-wrapper select:active, #app-wrapper .select select:active, #top-navbar .select #app-wrapper select.is-active, #app-wrapper .select select.is-active {
       outline: none; }
-    #app-wrapper #top-navbar .select select[disabled], #top-navbar .select #app-wrapper select[disabled], fieldset[disabled] #app-wrapper #top-navbar .select select, fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select {
+    #top-navbar .select #app-wrapper select[disabled], #app-wrapper .select select[disabled], fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select, fieldset[disabled] #app-wrapper .select select {
       cursor: not-allowed; }
   #app-wrapper .pageloader {
     background: #758ecd !important; }
@@ -7177,7 +7315,7 @@ body {
     transform: rotate(0deg); }
   to {
     transform: rotate(359deg); } }
-  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper #top-navbar .select:not(.is-multiple):not(.is-loading)::after, #top-navbar #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
+  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
     border: 3px solid transparent;
     border-radius: 2px;
     border-right: 0;
@@ -7194,7 +7332,7 @@ body {
     width: 0.625em; }
   #app-wrapper .level:not(:last-child) {
     margin-bottom: 1.5rem; }
-  #app-wrapper #top-navbar .select.is-loading::after, #top-navbar #app-wrapper .select.is-loading::after {
+  #app-wrapper .select.is-loading::after {
     animation: spinAround 500ms infinite linear;
     border: 2px solid #dbdbdb;
     border-radius: 290486px;
@@ -7205,7 +7343,7 @@ body {
     height: 1em;
     position: relative;
     width: 1em; }
-  #app-wrapper #top-navbar .select select, #top-navbar .select #app-wrapper select {
+  #top-navbar .select #app-wrapper select, #app-wrapper .select select {
     -moz-appearance: none;
     -webkit-appearance: none;
     align-items: center;
@@ -7223,9 +7361,9 @@ body {
     padding-top: calc(0.5em - 1px);
     position: relative;
     vertical-align: top; }
-    #app-wrapper #top-navbar .select select:focus, #top-navbar .select #app-wrapper select:focus, #app-wrapper #top-navbar .select select.is-focused, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper #top-navbar .select select:active, #top-navbar .select #app-wrapper select:active, #app-wrapper #top-navbar .select select.is-active, #top-navbar .select #app-wrapper select.is-active {
+    #top-navbar .select #app-wrapper select:focus, #app-wrapper .select select:focus, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper .select select.is-focused, #top-navbar .select #app-wrapper select:active, #app-wrapper .select select:active, #top-navbar .select #app-wrapper select.is-active, #app-wrapper .select select.is-active {
       outline: none; }
-    #app-wrapper #top-navbar .select select[disabled], #top-navbar .select #app-wrapper select[disabled], fieldset[disabled] #app-wrapper #top-navbar .select select, fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select {
+    #top-navbar .select #app-wrapper select[disabled], #app-wrapper .select select[disabled], fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select, fieldset[disabled] #app-wrapper .select select {
       cursor: not-allowed; }
   #app-wrapper .pageloader {
     background: #758ecd !important; }
@@ -7869,7 +8007,7 @@ body {
     transform: rotate(0deg); }
   to {
     transform: rotate(359deg); } }
-  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper #top-navbar .select:not(.is-multiple):not(.is-loading)::after, #top-navbar #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
+  #app-wrapper #top-navbar .navbar-link:not(.is-arrowless)::after, #top-navbar #app-wrapper .navbar-link:not(.is-arrowless)::after, #app-wrapper .select:not(.is-multiple):not(.is-loading)::after {
     border: 3px solid transparent;
     border-radius: 2px;
     border-right: 0;
@@ -7886,7 +8024,7 @@ body {
     width: 0.625em; }
   #app-wrapper .level:not(:last-child) {
     margin-bottom: 1.5rem; }
-  #app-wrapper #top-navbar .select.is-loading::after, #top-navbar #app-wrapper .select.is-loading::after {
+  #app-wrapper .select.is-loading::after {
     animation: spinAround 500ms infinite linear;
     border: 2px solid #dbdbdb;
     border-radius: 290486px;
@@ -7897,7 +8035,7 @@ body {
     height: 1em;
     position: relative;
     width: 1em; }
-  #app-wrapper #top-navbar .select select, #top-navbar .select #app-wrapper select {
+  #top-navbar .select #app-wrapper select, #app-wrapper .select select {
     -moz-appearance: none;
     -webkit-appearance: none;
     align-items: center;
@@ -7915,9 +8053,9 @@ body {
     padding-top: calc(0.5em - 1px);
     position: relative;
     vertical-align: top; }
-    #app-wrapper #top-navbar .select select:focus, #top-navbar .select #app-wrapper select:focus, #app-wrapper #top-navbar .select select.is-focused, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper #top-navbar .select select:active, #top-navbar .select #app-wrapper select:active, #app-wrapper #top-navbar .select select.is-active, #top-navbar .select #app-wrapper select.is-active {
+    #top-navbar .select #app-wrapper select:focus, #app-wrapper .select select:focus, #top-navbar .select #app-wrapper select.is-focused, #app-wrapper .select select.is-focused, #top-navbar .select #app-wrapper select:active, #app-wrapper .select select:active, #top-navbar .select #app-wrapper select.is-active, #app-wrapper .select select.is-active {
       outline: none; }
-    #app-wrapper #top-navbar .select select[disabled], #top-navbar .select #app-wrapper select[disabled], fieldset[disabled] #app-wrapper #top-navbar .select select, fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select {
+    #top-navbar .select #app-wrapper select[disabled], #app-wrapper .select select[disabled], fieldset[disabled] #top-navbar .select #app-wrapper select, #top-navbar .select fieldset[disabled] #app-wrapper select, fieldset[disabled] #app-wrapper .select select {
       cursor: not-allowed; }
   #app-wrapper .pageloader {
     background: #758ecd !important; }

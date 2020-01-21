@@ -36,7 +36,14 @@ function mws_evalScripts(el) {
     if (!el) return false;
     var scripts = el.getElementsByTagName("script");
     Array.prototype.forEach.call(scripts, function(el, i){
-        eval(el.innerHTML);
+	if (mws_hasClass(el, 'has-loaded')) return false;
+	if (el.getAttribute('src')) {
+	    var script = document.createElement('script');
+	    script.src = el.getAttribute('src');
+	    document.head.appendChild(script);
+	} else
+            eval(el.innerHTML);
+	mws_addClass(el, 'has-loaded');
     });
 }
 
@@ -64,6 +71,8 @@ function forEach(array, fn) {
     for (var i = 0; i < array.length; i++)
         fn(array[i], i);
 }
+
+function mws_forEach (array, fn) {forEach(array, fn)};
 
 function mws_forEachElement (selector, fn) {forEachElement(selector, fn)}
 
@@ -154,6 +163,10 @@ function mws_toggleClass (el, className) {
     }
 };
 
+function mws_toggleVisibility(el) {
+    el.style.display = el.style.display == "none" ? "block" : "none";
+}
+
 function qsa (handle) {
     return document.querySelectorAll(handle);
 }
@@ -182,3 +195,27 @@ function mws_addClass (el, className) {
 	}
     }
 }
+
+// observe dom
+
+var mws_observeDOM = (function(){
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    return function( obj, callback ){
+	if( !obj || !obj.nodeType === 1 ) return; // validation
+
+	if( MutationObserver ){
+	    // define a new observer
+	    var obs = new MutationObserver(function(mutations, observer){
+		callback(mutations);
+	    })
+	    // have the observer observe foo for changes in children
+	    obs.observe( obj, { childList:true, subtree:true });
+	}
+	
+	else if( window.addEventListener ){
+	    obj.addEventListener('DOMNodeInserted', callback, false);
+	    obj.addEventListener('DOMNodeRemoved', callback, false);
+	}
+    }
+})();

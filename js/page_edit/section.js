@@ -247,7 +247,8 @@ function moveSection(target, direction) {
 
 // Duplicate
 function duplicateSection(e) {
-    var clone = $('.mws-active').removeClass('mws-initiated').clone().insertAfter(".mws-active");
+    var clone = $('.mws-active').removeClass('mws-initiated').clone();
+    clone.insertAfter(".mws-active");
     reload_sections();
     var top = clone.position().top;
     if ((top - 10) > 0) {
@@ -331,15 +332,15 @@ function section_settings_init(target) {
     // Blur
     if (target.css('background-image').indexOf("e_blur:") != -1) {
         $('#section-background-image-blur').attr('checked', 'checked');
-        $('#section-background-image-blur').show();
+        $('#section-background-image-blur').parent().parent().parent().show();
     }
     // unsplash does not have such feature
     var bgUrl = target.css('background-image');
     bgUrl = bgUrl.replace('url(', '').replace(')', '').replace(/\"/gi, "");
     if (bgUrl.substring(0, 27) == 'https://images.unsplash.com') {
-        $('#section-background-image-blur').hide();
+        $('#section-background-image-blur').parent().parent().parent().hide();
     } else  {
-        $('#section-background-image-blur').show();
+        $('#section-background-image-blur').parent().parent().parent().show();
     }
     // Parallax
     if (target.attr("data-background-parallax") == "parallax") {
@@ -380,7 +381,7 @@ function section_settings_panel_html(target) {
         '<li>' +
         '<div class="switch">' +
         '<label>' +
-        '<input id="section-background-image-blur" onchange="section_settings_update();" type="checkbox">' +
+        '<input id="section-background-image-blur" onchange="section_settings_update();" type="checkbox" style="display: none;">' +
         '<span class="lever"></span>' +
         '</label>' +
         '</div>' +

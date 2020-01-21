@@ -1,4 +1,4 @@
-const client = new KeenAnalysis({
+const KeenClient = new KeenAnalysis({
     projectId: window.projectId,
     readKey: window.readKey
 });
@@ -136,7 +136,7 @@ function refresh_charts() {
     var timeframe = get_timeframe();
 
     // purchases metric
-    client
+    KeenClient
         .query("count", {
             event_collection: "purchases",
             filters: [{
@@ -156,7 +156,7 @@ function refresh_charts() {
         });
 
     // sum price metric
-    client
+    KeenClient
         .query("sum", {
             event_collection: "purchases",
             filters: [{
@@ -176,7 +176,7 @@ function refresh_charts() {
         });
 
     // pageviews metric
-    client
+    KeenClient
         .query("count", {
             event_collection: "pageviews",
             filters: [{
@@ -195,7 +195,7 @@ function refresh_charts() {
         });
 
     // unique pageviews metric
-    client
+    KeenClient
         .query("count_unique", {
             event_collection: "pageviews",
             target_property: "user.uuid",
@@ -215,7 +215,7 @@ function refresh_charts() {
         });
 
     // clicks metric
-    client
+    KeenClient
         .query("count", {
             event_collection: "clicks",
             filters: [{
@@ -234,7 +234,7 @@ function refresh_charts() {
         });
 
     // pageviews / purchaes chart
-    const countPageviews = client
+    const countPageviews = KeenClient
         .query({
             analysis_type: 'count',
             event_collection: 'pageviews',
@@ -248,7 +248,7 @@ function refresh_charts() {
             }]
         });
 
-    const countPurchases = client
+    const countPurchases = KeenClient
         .query({
             analysis_type: 'count',
             event_collection: 'purchases',
@@ -262,7 +262,7 @@ function refresh_charts() {
             }]
         });
 
-    const sumPurchases = client
+    const sumPurchases = KeenClient
         .query({
             analysis_type: 'sum',
             event_collection: 'purchases',
@@ -277,7 +277,7 @@ function refresh_charts() {
             }]
         });
 
-    client
+    KeenClient
         .run([countPageviews, countPurchases, sumPurchases])
         .then(function(res) {
             pageviews_purchases_chart.render(res);
@@ -287,7 +287,7 @@ function refresh_charts() {
         });
 
     // pageviews grouped by browser family
-    client
+    KeenClient
         .query('count', {
             event_collection: 'pageviews',
             interval: 'daily',
@@ -309,7 +309,7 @@ function refresh_charts() {
         });
 
     // pageviews by browser (pie)
-    client
+    KeenClient
         .query('count', {
             event_collection: 'pageviews',
             group_by: 'tech.browser.family',
@@ -341,7 +341,10 @@ function refresh_charts() {
 function change_date_type(value) {
     if (value == 'range') {
         $('.date-field-wrap').show();
-        document.getElementById('start').focus();
+        qi('start').focus();
+	setTimeout(function() {
+	    $('#start').datepicker('show');
+	}, 300);
     } else
         $('.date-field-wrap').hide();
     update_query();
@@ -363,8 +366,8 @@ function update_end_date(el) {
 
 function change_page(value) {
     if (value == 'all') {
-        window.location = "/analytics_view";
+        window.location = "/app/analytics_view.htm";
     } else {
-        window.location = "/analytics_page_view?id=" + value;
+        window.location = "/app/analytics_page_view.htm?id=" + value;
     }
 }

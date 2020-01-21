@@ -15,7 +15,8 @@ function save_page() {
             section.querySelector("iframe").removeAttribute("height");
         } else
             // destroy resizeable
-            if ($(section).data('droppable')) $(section).resizable("destroy"); });
+            if ($(section).data('droppable')) $(section).resizable("destroy");
+    });
 
     // remove animation
     $("[class*='ae-'].done, [class*='ae-'].do").each(function() {

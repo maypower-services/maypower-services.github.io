@@ -22,7 +22,9 @@ function mws_maxWidth(requiredWidth, el) {
     imageWidth = el.clientWidth || 0;
     if (requiredWidth > imageWidth) {
         imageWidth = requiredWidth;
-        el.style.width = requiredWidth;
+	// todo: not sure why we need to set the width here...
+	//if (el.nodeName == 'IMG')
+        //    el.style.width = requiredWidth;
     }
     return (imageWidth < 1200 ? imageWidth : 1200);
 };

@@ -45,7 +45,6 @@ function close_modal(modalID) {
 
 //Open/Close a modal
 function trigger_modal(modalID) {
-    console.log("triggermodal", modalID);
     mws_toggleClass(qs('#' + modalID), 'is-active');
     mws_toggleClass(qs('#' + modalID + ' .modal-background'), 'scaleInCircle');
     mws_toggleClass(qs('#' + modalID + ' .modal-content'), 'scaleIn');

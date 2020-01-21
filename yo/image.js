@@ -35,7 +35,7 @@ function yo_imageManagerModalHTML() {
     var iframe = document.createElement('iframe');
     iframe.id = 'image-manager-modal';
     iframe.style = 'position: fixed;z-index: 9147483630;left: 0;top: 0;width: 100%;height: 100%;opacity: 1;visibility: visible;transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;background: linear-gradient(to right, #9fb4e7, #758ecd);background-color: #758ecd;width: 100%;min-height: 100vh;border: none;';
-    iframe.src = '/image_manager';
+    iframe.src = '/app/image_manager.htm';
     return iframe;
 }
 
@@ -71,7 +71,7 @@ function yo_render_preview_image(el) {
     var image = document.getElementById(id);
     if (!image) {
         // console.log("element id,", el.id);
-        var img = '<img id="' + id + '" class="preview-image" onclick="open_image_library(document.getElementById(\'' + el.id +'\'))"/>';
+        var img = '<img id="' + id + '" class="preview-image" onclick="yo_open_image_library(document.getElementById(\'' + el.id +'\'))"/>';
         el.insertAdjacentHTML('afterend', img);
         image = document.getElementById(id);
     }

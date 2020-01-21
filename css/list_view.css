@@ -62,6 +62,11 @@
 .list_view > ul > li:last-of-type {
     border-bottom: none;}
 
+.list_view > ul > li .list-item-link {
+    display: block;}
+.list_view > ul > li .list-item-link * {
+    pointer-events: none;}
+
 .list_view > ul > li .list-item-title {
     text-overflow: ellipsis;
     width: 100%;
