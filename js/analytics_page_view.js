@@ -282,8 +282,8 @@ function update_end_date(el) {
 
 function change_page(value) {
     if (value == 'all') {
-        window.location = "/app/analytics_view.htm";
+        window.location = "/analytics_view.htm";
     } else {
-        window.location = "/app/analytics_page_view.htm?id=" + value;
+        window.location = "/analytics_page_view.htm?id=" + value;
     }
 }

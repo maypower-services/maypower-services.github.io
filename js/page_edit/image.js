@@ -45,7 +45,7 @@ function closeImageManager() {
 
 /* build the image mananager modal */
 function imageManagerModalHTML() {
-    return "<iframe id='image-manager-modal' src='/app/image_manager.htm'></iframe>";
+    return "<iframe id='image-manager-modal' src='/image_manager.htm'></iframe>";
 }
 
 /* open image library for bg */
