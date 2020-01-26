@@ -67,7 +67,7 @@ body {
 	    z-index: 2;*/
 }
 .clouds {
-    background: url(https://cssninja.io/themes/cssninja/assets/images/bg/clouds.png) repeat 0 0;
+    background: url(../img/clouds.png) repeat 0 0;
     -webkit-animation: 30s linear 0s normal none infinite clouds;
     -moz-animation: 30s linear 0s normal none infinite clouds;
     -ms-animation: 30s linear 0s normal none infinite clouds;
