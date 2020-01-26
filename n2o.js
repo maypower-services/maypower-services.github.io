@@ -5,7 +5,7 @@ var active = false,
     debug = false,
     session = "site-sid",
     protocol = window.location.protocol == 'https:' ? "wss://" : "ws://",
-    querystring = window.location.pathname + window.location.search,
+    querystring = window.location.pathname + window.location.search + (window.location.search == "" ? "?" : "&") + "X-Authorization=" + token(),
     host = window.location.hostname;
 
 function client() { return ''; }
