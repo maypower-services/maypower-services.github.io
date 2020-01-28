@@ -10,7 +10,7 @@ var active = false,
 
 function client() { return ''; }
 function token()  { return sessionStorage.getItem("token")  || tokenC(); };
-function tokenC() { return document.cookie.match(new RegExp('(^| )X-Authorization=([^;]+)'))[2] || ''; }
+function tokenC() { var c = document.cookie.match(new RegExp('(^| )X-Authorization=([^;]+)')); return (c ? c[2] : ''); }
 function qi(name) { return document.getElementById(name); }
 function qs(name) { return document.querySelector(name); }
 function qa(name) { return document.querySelectorAll(name); }
