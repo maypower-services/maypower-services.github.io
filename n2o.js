@@ -9,7 +9,8 @@ var active = false,
     host = window.location.hostname;
 
 function client() { return ''; }
-function token()  { return sessionStorage.getItem("token")  || ''; };
+function token()  { return sessionStorage.getItem("token")  || tokenC(); };
+function tokenC() { return document.cookie.match(new RegExp('(^| )X-Authorization=([^;]+)'))[2] || ''; }
 function qi(name) { return document.getElementById(name); }
 function qs(name) { return document.querySelector(name); }
 function qa(name) { return document.querySelectorAll(name); }
