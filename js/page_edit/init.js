@@ -237,7 +237,7 @@ function reload_sections() {
         if ($(elem).is("script")) {
             attr = "src";
         }
-        $(elem).attr(attr, "https://ws.maypower.services/direct/" + id.replace(/_([^_]*)$/, '.$1') + "?sections=" + sectionIds);
+        $(elem).attr(attr, "https://ws.maypower.services:8001/direct/" + id.replace(/_([^_]*)$/, '.$1') + "?sections=" + sectionIds);
         // remove old dependency after 2000 milliseconds
         setTimeout(function() {
             $('#' + id + '_deprecated').remove();
