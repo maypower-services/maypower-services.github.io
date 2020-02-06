@@ -9,6 +9,7 @@ if (window.addEventListener) {
 function open_image_library() {
     if ($('#image-manager-modal').length <= 0) {
         $('body').append(imageManagerModalHTML());
+	document.body.style.overflow = 'hidden';
     } else {
         $('#image-manager-modal').show();
     }
@@ -41,11 +42,12 @@ function imageSelect(Image) {
 
 function closeImageManager() {
     $('#image-manager-modal').hide();
+    document.body.style.overflow = '';
 }
 
 /* build the image mananager modal */
 function imageManagerModalHTML() {
-    return "<iframe id='image-manager-modal' src='/image_manager.htm'></iframe>";
+    return "<iframe id='image-manager-modal' src='"+ (window.location.hostname == 'localhost' ? '' : "https://app.maypower.services/") +"image_manager.htm'></iframe>";
 }
 
 /* open image library for bg */

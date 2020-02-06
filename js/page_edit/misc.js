@@ -116,8 +116,8 @@ function deleteElements(list) {
 function replaceWithContents(list) {
     forEach(list, function(q) {
         var elements = document.querySelectorAll(q);
-        console.log("contents query", q);
-        console.log("elements", elements);
+        //console.log("contents query", q);
+        //console.log("elements", elements);
         forEach(elements, function(el) {
             el.parentNode.insertBefore(el.firstChild, el.nextSibling);
             el.parentNode.removeChild(el);

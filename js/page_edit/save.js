@@ -2,14 +2,16 @@ function save_page() {
     var stage = document.getElementById('edit');
 
     // Destroy all froala instances
-    try
+    try {
 	forEach(window.froalaInstances, function(instance) {
             instance.destroy();
-            arrayRemove(window.froalaInstances, instance);
-	}); catch (error) {console.log(error)}
+            //arrayRemove(window.froalaInstances, instance);
+	});
+	window.froalaInstances = [];
+    } catch (error) {console.log(error)}
 
     // Clean up sections
-    try
+    try {
 	forEach(stage.children, function(section) {
             // clean up global section
             if (section.getAttribute('section') == "global_section") {
@@ -18,7 +20,8 @@ function save_page() {
             } else
 		// destroy resizeable
 		if ($(section).data('droppable')) $(section).resizable("destroy");
-	}); catch (error) {console.log(error)}
+	});
+    } catch (error) {console.log(error)}
 
     // remove animation
     $("[class*='ae-'].done, [class*='ae-'].do").each(function() {
