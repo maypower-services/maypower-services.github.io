@@ -53,9 +53,6 @@ window.editorSettings = {
         '1.5': '1.5',
         Double: '2'
     },
-    // toolbarButtons: [
-    //     "bold", "italic", "color", "paragraphFormat",'fontSize', "lineHeight", "fontFamily", "-", "align", "insertLink", "insertImage",'insertVideo', "inlineClass"
-    // ],
     toolbarButtons: {
         'moreText': {
             'buttons': ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting']
@@ -104,6 +101,7 @@ window.editorSettings = {
             window.contentChanged = true;
         },
         'image.inserted': function(img, response) {
+	    console.log("image inserted", img, response);
             var image = $(img),
                 $this = this;
             if (image.attr('data-unsplash-user-url')) {
@@ -122,6 +120,7 @@ window.editorSettings = {
             mws_runResponsiveImages();
         },
         'image.replaced': function(img, response) {
+	    console.log("image replaced", img, response);
             var image = $(img),
                 $this = this;
             if (image.attr('data-unsplash-user-url')) {

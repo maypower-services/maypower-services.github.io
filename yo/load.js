@@ -9,7 +9,9 @@ function load_form(id, html, closeable) {
     else if (document.getElementById('stage'))
 	document.getElementById('stage').insertAdjacentHTML('afterend', html);
     else
-	document.body.innerHTML += html; // done
+	document.body.innerHTML += html;
+
+    document.body.style.overflow = 'hidden';
     
     window.yo_form_id = id;
     stage = document.getElementById("stage-" + id);
@@ -38,6 +40,7 @@ function close_form(id) {
     if (stage) stage.remove();
     // remove esc listener
     yo_removeEventListener(document, 'keydown', close_on_esc);
+    document.body.style.overflow = '';
 }
 
 var close_on_esc = function(e) {

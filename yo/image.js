@@ -1,9 +1,12 @@
+/* yo image: opens image library, listens to response and sets value with preview image */
 (function() {
     if (window.addEventListener)
         window.addEventListener('message', image_library_message, false);
 })();
 
 function yo_open_image_library(el) {
+    document.body.style.overflow = 'hidden';
+    window.image_library_target = 'yo';
     // show library
     if (!document.getElementById('image-manager-modal'))
         document.getElementsByTagName('body')[0].appendChild(yo_imageManagerModalHTML());
@@ -24,7 +27,9 @@ function yo_open_image_library(el) {
 }
 
 function closeImageManager() {
+    window.image_library_target = undefined;
     document.getElementById('image-manager-modal').style.display = 'none';
+    document.body.style.overflow = '';
     var className = 'yo-image-select-active';
     var el = document.querySelector('.' + className);
     if (el.classList) el.classList.remove(className);
@@ -41,18 +46,19 @@ function yo_imageManagerModalHTML() {
 
 /* Listener to image library iframe messages */
 function image_library_message(event) {
+    // fühl dich nicht angesprochen!
+    if (window.image_library_target != 'yo') return false;
     // Check sender origin to be trusted
     // if (event.origin !== 'https://app.maypower.services') return;
     var data = event.data;
-
-    if (typeof(window[data.func]) == 'function') {
-        window[data.func].call(null, data.message);
-    }
+    // set to yo
+    if (data.func == 'imageSelect') data.func = 'yo_imageSelect';
+    if (typeof(window[data.func]) == 'function') window[data.func].call(null, data.message);
     return Promise.resolve("Dummy response to keep the console quiet");
 }
 
 // Functions will be called from iframe
-function imageSelect(Image) {
+function yo_imageSelect(Image) {
     var el = document.querySelector('.yo-image-select-active');
     el.value = Image.url;
     yo_render_preview_image(el);

@@ -7,6 +7,7 @@ if (window.addEventListener) {
 }
 
 function open_image_library() {
+    window.image_library_target = 'app';
     if ($('#image-manager-modal').length <= 0) {
         $('body').append(imageManagerModalHTML());
 	document.body.style.overflow = 'hidden';
@@ -17,18 +18,19 @@ function open_image_library() {
 
 /* Listener to image library iframe messages */
 function image_library_message(event) {
+    console.log("image_lib_message", event);
+    // fühl dich nicht angesprochen
+    if (window.image_library_target != 'app') return false;
     // Check sender origin to be trusted
     // if (event.origin !== 'https://app.storeless.io') return;
     var data = event.data;
-
-    if (typeof(window[data.func]) == 'function') {
-        window[data.func].call(null, data.message);
-    }
+    if (typeof(window[data.func]) == 'function') window[data.func].call(null, data.message);
     return Promise.resolve("Dummy response to keep the console quiet");
 }
 
 // Functions will be called from iframe
 function imageSelect(Image) {
+    if (window.image_library_target != 'app') return false;
     // yo_image hack
     if (document.querySelector('.yo-image-select-active')) {
         var el = document.querySelector('.yo-image-select-active');

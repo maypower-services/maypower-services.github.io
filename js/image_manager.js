@@ -67,6 +67,7 @@ function upload_succeeded() {
 }
 
 function select_image(Image) {
+    console.log("select_image", Image);
     var el = qi("image-" + Image);
     window.parent.postMessage({
         'func': 'imageSelect',
