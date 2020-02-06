@@ -2,21 +2,23 @@ function save_page() {
     var stage = document.getElementById('edit');
 
     // Destroy all froala instances
-    forEach(window.froalaInstances, function(instance) {
-        instance.destroy();
-        arrayRemove(window.froalaInstances, instance);
-    });
+    try
+	forEach(window.froalaInstances, function(instance) {
+            instance.destroy();
+            arrayRemove(window.froalaInstances, instance);
+	}); catch (error) {console.log(error)}
 
     // Clean up sections
-    forEach(stage.children, function(section) {
-        // clean up global section
-        if (section.getAttribute('section') == "global_section") {
-            section.removeAttribute("class");
-            section.querySelector("iframe").removeAttribute("height");
-        } else
-            // destroy resizeable
-            if ($(section).data('droppable')) $(section).resizable("destroy");
-    });
+    try
+	forEach(stage.children, function(section) {
+            // clean up global section
+            if (section.getAttribute('section') == "global_section") {
+		section.removeAttribute("class");
+		section.querySelector("iframe").removeAttribute("height");
+            } else
+		// destroy resizeable
+		if ($(section).data('droppable')) $(section).resizable("destroy");
+	}); catch (error) {console.log(error)}
 
     // remove animation
     $("[class*='ae-'].done, [class*='ae-'].do").each(function() {
@@ -40,7 +42,7 @@ function save_page() {
         forEach(stage.children, function(section) {
             init_froala(section);
         });
-    }, 300);
+    }, 400);
 }
 // Disable auto save because we do not want to interrupt
 // the user by destroying froala
