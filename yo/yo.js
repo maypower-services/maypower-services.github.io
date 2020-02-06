@@ -10,8 +10,5 @@ function yo_request_input(el, form, callback) {
     ws.send(enc(tuple(atom('client'), tuple(atom('yo'), bin(JSON.stringify(form)))))); }
 
 function yo_execute_callback(data) {
-    console.log("encodedUriComponent", JSON.stringify(data));
-    console.log("unescaped", unescape(JSON.stringify(data)));
-    console.log("btoa", btoa(unescape(JSON.stringify(data))));
     window.form_el.setAttribute("data-stored-input", btoa(unescape((JSON.stringify(data)))));
     window.form_callback(data); }
