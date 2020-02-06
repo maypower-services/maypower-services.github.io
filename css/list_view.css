@@ -174,7 +174,9 @@
     margin: -10px;
 }
 .list_view .list-head-right > div,
-.list_view .list-head-right > button {
+.list_view .list-head-right > button,
+.list_view .list-head-right .list-actions > button,
+.list_view .list-head-right .list-actions > a {
     margin: 0 10px;
 }
 
@@ -196,7 +198,7 @@
     justify-content: flex-end;
     position: relative;
 }
-.list_view.gallery .search-area {
+.list_view.gallery .list-head-right {
     margin-bottom: -30px;
 }
 .list_view .search-area .button {
