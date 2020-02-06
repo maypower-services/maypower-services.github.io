@@ -9,7 +9,7 @@ function load_form(id, html, closeable) {
     else if (document.getElementById('stage'))
 	document.getElementById('stage').insertAdjacentHTML('afterend', html);
     else
-	document.body.innerHTML += html;
+	document.body.innerHTML += html; // done
     
     window.yo_form_id = id;
     stage = document.getElementById("stage-" + id);
