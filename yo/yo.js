@@ -7,7 +7,7 @@ function yo_request_input(el, form, callback) {
     window.form_document = form;
     window.form_callback = callback;
     window.form_el = el;
-    ws.send(enc(tuple(atom('client'), tuple(bin(JSON.stringify(form)))))); }
+    ws.send(enc(tuple(atom('client'), tuple(atom('yo'), bin(JSON.stringify(form)))))); }
 
 function yo_execute_callback(data) {
     console.log("encodedUriComponent", JSON.stringify(data));
