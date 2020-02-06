@@ -1,13 +1,13 @@
 function init_list(id) {
     var list = qi(id);
     if (mws_hasClass(list, 'yo-list')) return false;
+    console.log("id", id); // foijafoiwajfoiewajfoiewaj
     var fields = document.querySelectorAll("#" + id + " > .fields-group");
     l_forEach(fields, function(el_fields_group, index) {
         i = index +1;
         if (!is_visible(el_fields_group))
 	    el_fields_group.style.display = 'none';
 	l_update_visibility_class(el_fields_group);
-            
         // add remove button
         var remove_button = document.createElement('button');
         remove_button.id = id + "_remove_" + i;
