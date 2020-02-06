@@ -9,6 +9,7 @@ body {
     min-height: calc(100vh - 65px);
     overflow: hidden;
     margin-bottom: 200px;
+    background: #fff;
 }
 
 #mws-global-loading-overlay {
@@ -498,8 +499,8 @@ div.mws-dropdown ul li button.active {
     top: 0;
     left: 50%;
     right: 50%;
-    margin-left: -20px;
-    width: 40px;
+    margin-left: -25px;
+    width: 50px;
     height: 80px;
     text-align: center;
 }
@@ -514,33 +515,35 @@ div.mws-dropdown ul li button.active {
     -ms-flex-align: center;
     align-items: center;
     /* margin: 0 20px !important; */
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: #ededed;
+    /*background: #ededed;*/
+    background: #506380;
     cursor: pointer;
     transition: all .3s;
     display: inline-block;
+    border: 2px solid #fff;
 }
 
 .mws-add-button-wrap .mws-add-button svg,
 .mws-close-add-section-button svg {
-    color: #999;
-    fill: #999;
+    color: #fff;
+    fill: #fff;
     transition: inherit;
-    margin-top: 2px;
 }
 
 .mws-add-button-wrap .mws-add-button:hover,
 .mws-close-add-section-button:hover {
     background: #fff;
+    border: 2px solid #344258;
     box-shadow: 0 14px 16px -22px rgba(127, 0, 255, 0.42), 0 4px 13px 0px rgba(0, 0, 0, 0.12), 0 8px 5px -5px rgba(127, 0, 255, 0.2) !important;
 }
 
 .mws-add-button-wrap .mws-add-button:hover svg,
 .mws-close-add-section-button:hover svg {
-    color: #758ecd;
-    fill: #758ecd;
+    color: #000;
+    fill: #000;
 }
 
 .mws-add-button-wrap .mws-add-button:active,
@@ -677,12 +680,14 @@ div.mws-dropdown ul li button.active {
     box-shadow: 0 0 3px 0 rgba(0,0,0,0.1);
     -webkit-transition: box-shadow 0.3s ease-in-out;
     transition: box-shadow 0.3s ease-in-out;
+    padding-bottom: 3px;
 }
 
 .mws-add-section .flex-card img {
     max-width: 100%;
     width: 100%;
-    margin-bottom: -6px;
+    margin-bottom: 3px;
+    max-height: 300px;
 }
 
 .mws-add-section .flex-card:hover {
