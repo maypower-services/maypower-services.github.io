@@ -27,6 +27,25 @@ $(document).on('mouseenter', '#edit > section', (e) => {
         $(document).trigger('section.hover', e);
 });
 
+function clean_sections_from_editor_tools() {
+    // Clean up sections
+    try {
+	var stage = document.getElementById('edit');
+	forEach(stage.children, function(section) {
+            // clean up global section
+            if (section.getAttribute('section') == "global_section") {
+		section.removeAttribute("class");
+		section.querySelector("iframe").removeAttribute("height");
+            } else
+		// destroy resizeable
+		if ($(section).data('droppable')) $(section).resizable("destroy");
+	});
+	clearClasses(['mws-initiated', 'mws-hover', 'mws-active', 'mws-settings-active', 'maypower-theme', 'fr-draggable', 'fr-box', 'fr-inline']);
+	deleteElements(['.mws-settings-panel', '[section=mws-placeholder]', '.ui-resizable-handle', '.fr-table-resizer', '.fr-image-resizer', '.fr-quick-insert', '.fr-floating-btn', '.fr-code', '.CodeMirror', '.fr-command']);
+	replaceWithContents(['.fr-wrapper', '.fr-element']);
+    } catch (error) {console.log(error)}
+}
+
 $(document).on('section.scroll', function() {
     var target = ($('.mws-hover') ? $('.mws-hover') : $('#edit > section:first-of-type'));
     var targetTop = (target.position() ? target.position().top : 0);
@@ -247,16 +266,18 @@ function moveSection(target, direction) {
 
 // Duplicate
 function duplicateSection(e) {
-    var clone = $('.mws-active').removeClass('mws-initiated').clone();
-    clone.insertAfter(".mws-active");
-    reload_sections();
+    var stage = qi('stage');
+    var clone = $('.mws-active').clone();
     var top = clone.position().top;
-    if ((top - 10) > 0) {
-        top = top - 20;
-    }
-    $("html, body").animate({
-        scrollTop: top
-    }, 600);
+
+    clone.insertAfter(".mws-active");
+    
+    destroy_all_froala_instances();
+    clean_sections_from_editor_tools();
+    reload_sections();
+
+    if ((top - 10) > 0) top = top - 20;
+    $("html, body").animate({scrollTop: top}, 600);
 };
 
 // Delete
@@ -606,12 +627,11 @@ function section_js_load(section_name, libs, js) {
     $(libs).each(function() {
         section_load_js_file(this);
     });
-    // wait if all scripts are loaded
+    // ~somewhat wait until all scripts are loaded
     setTimeout(function() {
-        if ($("#" + section_name + "_js").length <= 0) {
+        if ($("#" + section_name + "_js").length <= 0)
             $('body').append("<script id=\""+ section_name + "_js\" type=\"text/javascript\">"+ js +"</sc" + "ript>");
-        }
-        // eval(js);
+        eval(js);
     }, 2000);
     window.contentChanged = true;
 }

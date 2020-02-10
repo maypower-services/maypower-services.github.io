@@ -61,4 +61,13 @@ function init_nav() {
         });
     });
 
+    // Make the current one active
+    var current = location.pathname.replace(/^.*[\\\/]/, '').replace(/.htm/, '');
+    forEachElement('.sidebar-menu li a', function(el) {
+	if (el.getAttribute('href').replace(/.htm/, '').indexOf(current) !== -1) {
+	    var Id = el.parentNode.parentNode.id;
+	    mws_removeClass(qs('[data-child-menu].is-active'), 'is-active');
+	    mws_addClass(qs('[data-child-menu='+ Id +']'), 'is-active');
+	}
+    });
 };

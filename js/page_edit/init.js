@@ -227,15 +227,14 @@ function reload_sections() {
         // set attr type to change
         var attr = "href";
         // correct attr for script dom el
-        if ($(elem).is("script")) {
-            attr = "src";
-        }
-        $(elem).attr(attr, "https://ws.maypower.services:8001/direct/" + id.replace(/_([^_]*)$/, '.$1') + "?sections=" + sectionIds);
-        // remove old dependency after 2000 milliseconds
+        if ($(elem).is("script")) attr = "src";
+	var host = (window.location.hostname == 'localhost' ? window.location.hostname : "ws.maypower.services");
+        $(elem).attr(attr, "//" + host + ":8001/direct/" + id.replace(/_([^_]*)$/, '.$1') + "?sections=" + sectionIds);
+        // remove old dependency after 5000 milliseconds
         setTimeout(function() {
             $('#' + id + '_deprecated').remove();
         }, 5000);
-    });
+    });    
     mws_init_global_iframes();
     init_editor_click_listeners();
     refreshPosition();
@@ -264,6 +263,17 @@ function init_froala(section) {
     // Add class .mws-initated to prevent further re-init
     if (section.classList) section.classList.add('mws-initiated');
     else section.className += ' ' + 'mws-initiated';
+}
+
+function destroy_all_froala_instances() {
+    // Destroy all froala instances
+    try {
+	forEach(window.froalaInstances, function(instance) {
+            instance.destroy();
+            //arrayRemove(window.froalaInstances, instance);
+	});
+	window.froalaInstances = [];
+    } catch (error) {console.log(error)}
 }
 
 function init_editor_click_listeners() {
