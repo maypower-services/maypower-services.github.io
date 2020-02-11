@@ -256,11 +256,11 @@ section h1 {
     z-index: 99999;
     border-top: 5px solid #4a4a4a;
     border-radius: 0 0 4px 0;
-    opacity: 0.7;
+    /*opacity: 0.7;
     transition: opacity .5s ease-out;
     -moz-transition: opacity .5s ease-out;
     -webkit-transition: opacity .5s ease-out;
-    -o-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;*/
 }
 
 .mws-section-controls:hover {

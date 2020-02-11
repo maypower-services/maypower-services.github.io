@@ -62,9 +62,10 @@ function init_nav() {
     });
 
     // Make the current one active
-    var current = location.pathname.replace(/^.*[\\\/]/, '').replace(/.htm/, '');
+    var current = location.pathname.replace(/^.*[\\\/]/, '').replace(/.htm/, '').replace(/edit/, 'list');
     forEachElement('.sidebar-menu li a', function(el) {
-	if (el.getAttribute('href').replace(/.htm/, '').indexOf(current) !== -1) {
+	var href = el.getAttribute('href').replace(/.htm/, '');
+	if (href.indexOf(current) !== -1 || href.indexOf(current.replace('_page_', '_')) !== -1) {
 	    var Id = el.parentNode.parentNode.id;
 	    mws_removeClass(qs('[data-child-menu].is-active'), 'is-active');
 	    mws_addClass(qs('[data-child-menu='+ Id +']'), 'is-active');
