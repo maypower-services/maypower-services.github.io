@@ -7,13 +7,14 @@ function mws_findContainerWidth(element) {
 
     if (element.getAttribute('mws-width')) return element.getAttribute('mws-width');
     else if (element.parentNode.getAttribute('mws-width')) return element.parentNode.getAttribute('mws-width');
-
+    else if (element.getAttribute('data-background-src')) return element.offsetWidth + element.offsetWidth * 0.2;
     containerWidth = 0;
     while (((element = element != null ? element.parentNode : void 0) instanceof HTMLElement) && !containerWidth) {
         style = window.getComputedStyle(element);
         if (!/^inline/.test(style.display))
             containerWidth = element.offsetWidth;
     }
+    console.log("cona", containerWidth, element);
     return containerWidth;
 };
 

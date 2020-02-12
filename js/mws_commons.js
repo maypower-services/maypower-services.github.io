@@ -82,6 +82,13 @@ function forEachElement(selector, fn) {
         fn(elements[i], i);
 }
 
+function mws_remove(el) {
+    if (el.length > 1)
+	mws_forEach(el, function(el1) {mws_remove(el1);})
+    else
+	el.parentNode.removeChild(el);
+}
+
 function mws_removeEventListener(el, eventName, handler) {
     if (el.removeEventListener)
 	el.removeEventListener(eventName, handler);
