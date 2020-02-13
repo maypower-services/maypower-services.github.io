@@ -394,7 +394,7 @@ function section_settings_panel_html(target) {
         '<li>' +
         '<div class="switch">' +
         '<label>' +
-        '<input id="section-background-image-blur" onchange="section_settings_update();" type="checkbox" style="display: none;">' +
+        '<input id="section-background-image-blur" onchange="section_settings_update();" type="checkbox">' +
         '<span class="lever"></span>' +
         '</label>' +
         '</div>' +
@@ -492,7 +492,7 @@ function section_settings_panel_image_url(el, blurred) {
     } else if (bgUrl.substring(0, 27) == 'https://images.unsplash.com') {
         if (blurred === undefined)
             return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=38&h=30";
-        return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=1200&blur=50";
+        return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=1200&blur=100";
     } else {
         return undefined;
     }
