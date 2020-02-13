@@ -355,14 +355,6 @@ function section_settings_init(target) {
         $('#section-background-image-blur').attr('checked', 'checked');
         $('#section-background-image-blur').parent().parent().parent().show();
     }
-    // unsplash does not have such feature
-    var bgUrl = target.css('background-image');
-    bgUrl = bgUrl.replace('url(', '').replace(')', '').replace(/\"/gi, "");
-    if (bgUrl.substring(0, 27) == 'https://images.unsplash.com') {
-        $('#section-background-image-blur').parent().parent().parent().hide();
-    } else  {
-        $('#section-background-image-blur').parent().parent().parent().show();
-    }
     // Parallax
     if (target.attr("data-background-parallax") == "parallax") {
         $('#section-background-image-parallax').attr('checked', 'checked');
@@ -500,7 +492,7 @@ function section_settings_panel_image_url(el, blurred) {
     } else if (bgUrl.substring(0, 27) == 'https://images.unsplash.com') {
         if (blurred === undefined)
             return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=38&h=30";
-        return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=1200";
+        return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=1200&blur=50";
     } else {
         return undefined;
     }
