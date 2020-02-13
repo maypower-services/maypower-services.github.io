@@ -536,6 +536,8 @@ function section_settings_image_icon_update() {
 function section_settings_background_image_remove() {
     $('.mws-settings-active').removeAttr("data-background-repeat");
     $('.mws-settings-active').removeAttr("data-background-align");
+    $('.mws-settings-active').removeAttr("data-background-stretch");
+    $('.mws-settings-active').removeAttr("data-background-src");
     $('.mws-settings-active').css("background-image", "");
     section_settings_image_icon_update();
 }
