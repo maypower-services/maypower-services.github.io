@@ -162,10 +162,23 @@ function mws_resetImages() {
 function crop_image(url, width, height) {
     width = (width ? width : 100);
     height = (height ? height : false);
+    console.log("crop_image", url, width + ":" + height);
     switch (false) {
     case !/images.unsplash.com/.test(url):
-        url = url.split(/[?#]/)[0] + "?fm=webp&fit=crop";
-        url += "&w=" + width + (height ? "&h=" + height : "");
+	var urlParts = url.split("?");
+	var qsParts = (urlParts[1] ? urlParts[1].split("&") : []);
+	qsParts = qsParts.filter(function(list_item) {
+	    if (list_item.indexOf("w=") == 0) return false;
+	    if (list_item.indexOf("h=") == 0) return false;
+	    if (list_item.indexOf("fm=") == 0) return false;
+	    if (list_item.indexOf("fit=") == 0) return false;
+	    return true;
+	});
+	qsParts.push("w=" + width);
+	if (height) qsParts.push("h=" + height);
+	qsParts.push("fm=webp");
+	qsParts.push("fit=crop");
+	url = urlParts[0] + "?" + qsParts.join("&");
         break;
     case !/res.cloudinary.com/.test(url):
         url = url.replace(/(.*)upload(.*)\/v(.*)/, "$1upload/w_" + width + (height ? ",h_" + height : "") + ",c_thumb/v$3");

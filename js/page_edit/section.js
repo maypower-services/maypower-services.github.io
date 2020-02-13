@@ -490,9 +490,13 @@ function section_settings_panel_image_url(el, blurred) {
         else
             return 'https://res.cloudinary.com/dlgtwbxmg/image/upload/w_auto/v1551451174/mws/' + filename;
     } else if (bgUrl.substring(0, 27) == 'https://images.unsplash.com') {
+	console.log("blured", blurred);
+	console.log("bgUrl", bgUrl);
         if (blurred === undefined)
             return bgUrl.replace(/(&blur=).*?(&|$)/, '$2').replace(/(&w=).*?(&|$)/, '$2') + "&w=38&h=30";
-        return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=1200&blur=100";
+	else if (blurred === true)
+	    return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=1200&blur=100";
+        return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=1200";
     } else {
         return undefined;
     }
