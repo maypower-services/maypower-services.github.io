@@ -347,9 +347,9 @@ function section_settings_init(target) {
     // Background image
     section_settings_image_icon_update();
     // Stretch
-    if (target.attr("data-background-stretch") == "cover") {
+    /*if (target.attr("data-background-stretch") == "cover") {
         $('#section-background-image-stretch').attr('checked', 'checked');
-    }
+    }*/
     // Blur
     if (target.css('background-image').indexOf("e_blur:") != -1 || target.css('background-image').indexOf("blur=") != -1) {
         $('#section-background-image-blur').attr('checked', 'checked');
@@ -383,14 +383,14 @@ function section_settings_panel_html(target) {
         '</div>' +
         'Background image' +
         '</li>' +
-        '<li>' +
+        /*'<li>' +
         '<div class="switch">' +
         '<label>' +
         '<input id="section-background-image-stretch" onchange="section_settings_update();" type="checkbox">' +
         '<span class="lever"></span>' +
         '</label>' +
         '</div>' +
-        'Stretch to fill</li>' +
+        'Stretch to fill</li>' +*/
         '<li>' +
         '<div class="switch">' +
         '<label>' +
@@ -408,7 +408,7 @@ function section_settings_panel_html(target) {
         '</div>' +
         'Parallax</li>' +
         '</ul>' +
-        '<ul id="mws-positioning" class="mws-positioning" style="display: none;">' +
+        /*'<ul id="mws-positioning" class="mws-positioning" style="display: none;">' +
         '<form id="mws-positioning-form" onchange="section_settings_update();">'+
         '<li>' +
         '<label class="mws-radio">' +
@@ -441,7 +441,7 @@ function section_settings_panel_html(target) {
         '</label>' +
         '</li>' +
         '</form>'+
-        '</ul>' +
+        '</ul>' +*/
         '<ul>' +
         '<li>' +
         '<input id="section-settings-color-background" type="color" onchange="section_settings_update();" class="color-input">' +
@@ -606,11 +606,12 @@ function section_settings_update() {
             'background-color': elBackgroundColor.value
         });
     // Stretch
-    if ($('#section-background-image-stretch').is(':checked')) {
+    section.attr("data-background-stretch", "cover");
+    /*if ($('#section-background-image-stretch').is(':checked')) {
         section.attr("data-background-stretch", "cover");
     } else {
         section.removeAttr("data-background-stretch");
-    }
+    }*/
     // Blur
     if ($('#section-background-image-blur').is(':checked')) {
         section.css('background-image', 'url('+ section_settings_panel_image_url(section, true) +')');
