@@ -351,7 +351,7 @@ function section_settings_init(target) {
         $('#section-background-image-stretch').attr('checked', 'checked');
     }
     // Blur
-    if (target.css('background-image').indexOf("e_blur:") != -1) {
+    if (target.css('background-image').indexOf("e_blur:") != -1 || target.css('background-image').indexOf("blur=") != -1) {
         $('#section-background-image-blur').attr('checked', 'checked');
         $('#section-background-image-blur').parent().parent().parent().show();
     }
@@ -490,13 +490,31 @@ function section_settings_panel_image_url(el, blurred) {
         else
             return 'https://res.cloudinary.com/dlgtwbxmg/image/upload/w_auto/v1551451174/mws/' + filename;
     } else if (bgUrl.substring(0, 27) == 'https://images.unsplash.com') {
-	console.log("blured", blurred);
-	console.log("bgUrl", bgUrl);
-        if (blurred === undefined)
-            return bgUrl.replace(/(&blur=).*?(&|$)/, '$2').replace(/(&w=).*?(&|$)/, '$2') + "&w=38&h=30";
-	else if (blurred === true)
-	    return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=1200&blur=100";
-        return bgUrl.replace(/(&w=).*?(&|$)/, '$2') + "&w=1200";
+	var bgUrlParts = bgUrl.split("?");
+	var qsParts = (bgUrlParts[1] ? bgUrlParts[1].split("&") : []);
+	qsParts = qsParts.filter(function(list_item) {
+	    if (list_item.indexOf("w=") == 0) return false;
+	    if (list_item.indexOf("h=") == 0) return false;
+	    if (list_item.indexOf("fm=") == 0) return false;
+	    if (list_item.indexOf("fit=") == 0) return false;
+	    if (list_item.indexOf("blur=") == 0) return false;
+	    return true;
+	});
+
+	if (blurred === undefined) {
+	    // is small preview thumb
+	    qsParts.push("w=28");
+	    qsParts.push("h=30");
+	} else if (blurred === true) {
+	    qsParts.push("w=1200");
+	    qsParts.push("blur=100");
+	} else {
+	    qsParts.push("w=1200");
+	}
+	qsParts.push("fm=webp");
+	qsParts.push("fit=crop");
+	
+	return bgUrlParts[0] + "?" + qsParts.join("&");
     } else {
         return undefined;
     }
