@@ -14,7 +14,6 @@ function mws_findContainerWidth(element) {
         if (!/^inline/.test(style.display))
             containerWidth = element.offsetWidth;
     }
-    console.log("cona", containerWidth, element);
     return containerWidth;
 };
 
