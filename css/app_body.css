@@ -6217,6 +6217,17 @@ body {
       cursor: not-allowed; }
   #app-wrapper .pageloader {
     background: #758ecd !important; }
+  #app-wrapper #breadcrumbs_go_back {
+    top: 80px;
+    left: calc(5% + 80px);
+    position: absolute;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.3s;
+    opacity: 0.4; }
+    #app-wrapper #breadcrumbs_go_back:hover {
+      opacity: 1; }
   #app-wrapper .breadcrumbs {
     position: absolute;
     top: 80px;
