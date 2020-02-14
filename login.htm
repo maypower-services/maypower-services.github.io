@@ -8,7 +8,9 @@
     
     <title>MayPower Web Services</title>
     <script>
-      (function() { document.cookie = 'X-Authorization=; Max-Age=-99999999;';})();
+      (function() {
+      sessionStorage.removeItem('token');
+      document.cookie = 'X-Authorization=; Max-Age=-99999999;';})();
     </script>
     <script src="js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/mws_commons.js"></script>
