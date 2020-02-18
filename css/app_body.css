@@ -8784,6 +8784,8 @@ body {
     margin-left: 80px;
     min-height: 400px;
     min-height: calc(100vh - 240px); }
+  #app-wrapper > .columns:last-child {
+    margin-bottom: 0; }
   #app-wrapper #footer {
     text-align: right;
     padding-bottom: 50px;
