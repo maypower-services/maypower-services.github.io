@@ -65,6 +65,7 @@ function init_nav() {
     var current = location.pathname.replace(/^.*[\\\/]/, '').replace(/.htm/, '').replace(/edit/, 'list');
     forEachElement('.sidebar-menu li a', function(el) {
 	var href = el.getAttribute('href').replace(/.htm/, '');
+	console.log("href", href, current);
 	if (href.indexOf(current) !== -1 || href.indexOf(current.replace('_page_', '_')) !== -1) {
 	    var Id = el.parentNode.parentNode.id;
 	    mws_removeClass(qs('[data-child-menu].is-active'), 'is-active');
