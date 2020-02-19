@@ -3666,6 +3666,7 @@ body {
 
 #app-wrapper {
   padding-top: 65px;
+  overflow: hidden;
   /*! layout/_colors.scss | Bulkit | CSS Ninja */
   /* ==========================================================================
   Bulkit general color variables
@@ -6329,6 +6330,10 @@ body {
   #app-wrapper .project-tagline, #app-wrapper .tagline {
     font-weight: 400 !important;
     color: #999 !important; }
+  @media (max-width: 600px) {
+    #app-wrapper .project-title, #app-wrapper .title {
+      font-size: 1.5rem !important;
+      color: #444F60 !important; } }
   #app-wrapper .project-members-avatars {
     display: flex;
     justify-content: flex-start;
@@ -8789,6 +8794,28 @@ body {
   #app-wrapper #footer {
     text-align: right;
     padding-bottom: 50px;
-    padding-top: 50px; }
+    padding-top: 50px;
+    margin-left: 90px;
+    margin-right: 30px; }
+
+@media (max-width: 600px) {
+  #top-navbar .main-menu {
+    width: 80px !important; }
+  #top-navbar .child-menu {
+    left: 80px !important; }
+  #top-navbar nav.dashboard-nav {
+    margin-left: 80px !important; }
+  #top-navbar #project_dropdown .select {
+    width: 80px !important; }
+  #top-navbar .navbar {
+    max-width: calc(100% - 80px) !important;
+    overflow-x: auto; }
+
+  .app-wrapper {
+    padding-top: 10px !important; }
+    .app-wrapper .card-title {
+      font-size: 1.25rem !important; }
+    .app-wrapper .project-title, .app-wrapper .title {
+      font-size: 1.6em !important; } }
 
 /*# sourceMappingURL=app_body.css.map */

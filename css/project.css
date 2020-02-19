@@ -91,6 +91,10 @@ TABLE OF CONTENTS
   font-weight: 400 !important;
   color: #999 !important; }
 
+@media (max-width: 600px) {
+  .project-title, .title {
+    font-size: 1.5rem !important;
+    color: #444F60 !important; } }
 .project-members-avatars {
   display: flex;
   justify-content: flex-start;

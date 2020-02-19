@@ -173,3 +173,13 @@ input {font-size: 1.2em !important;}
     height: 70px;
     width: 100%;
     margin-bottom: 40px;}
+
+@media (max-width: 600px) {
+    .simple-form {
+	margin-top: 0 !important;
+	margin-bottom: 40px !important;
+    }
+    .submit-wrap {
+	margin-top: 0 !important;
+    }
+}
