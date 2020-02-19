@@ -633,9 +633,6 @@ div.mws-dropdown ul li button.active {
 }
 
 @media (min-width: 992px) {
-    .mws-settings-panel-content {
-	overflow-y: auto;
-    }
     .mws-add-section .columns {
 	-webkit-column-count: 3;
 	-moz-column-count: 3;
@@ -1109,4 +1106,10 @@ div.mws-dropdown ul li button.active {
     margin-top: -0.6rem;
     font-size: 13px;
     color: grey;
+}
+
+@media (max-width: 600px) {
+    .mws-settings-panel-content {
+	overflow-y: auto;
+    }
 }
