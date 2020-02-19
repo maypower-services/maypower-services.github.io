@@ -78,6 +78,17 @@
     padding-right: 0;
 }*/
 
+@media (max-width: 600px) {
+    .simple-form > .fields-group,
+    .simple-form > .list > .fields-group {
+	display: block !important;
+    }
+
+    .fields-group > .field {
+	width: 100% !important;
+    }
+}
+
 /* fix border */
 .simple-form > .list > .fields-group {
     border-bottom: none;}

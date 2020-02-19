@@ -185,7 +185,7 @@
     margin: 0 10px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .list_view .list-head {
 	display: block !important;
 	margin-bottom: 15px;
@@ -202,6 +202,12 @@
     }
     .list_view .list-head .list-actions > .list-action-button {
 	margin-bottom: 10px;
+    }
+    .list_view.gallery > ul {
+	margin: 0 !important;
+    }
+    .list_view.gallery > ul > li {
+	padding-left: 0 !important;
     }
 }
 
