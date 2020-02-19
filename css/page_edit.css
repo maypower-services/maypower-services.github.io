@@ -210,7 +210,7 @@ body {
 /*  */
 
 
-/** Editor **/
+/** Editor**/
 
 #edit > section {
     position: relative;
@@ -1113,4 +1113,8 @@ div.mws-dropdown ul li button.active {
     .mws-settings-panel-content {
 	overflow-y: auto;
     }
+}
+
+[editor-onclick] * {
+    pointer-events: none;
 }
