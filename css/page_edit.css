@@ -1115,6 +1115,9 @@ div.mws-dropdown ul li button.active {
     }
 }
 
+[editor-onclick] {
+    cursor: pointer;
+}
 [editor-onclick] * {
     pointer-events: none;
 }
