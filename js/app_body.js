@@ -65,6 +65,7 @@ function init_nav() {
     // Make the current one active
     var current = location.pathname.replace(/^.*[\\\/]/, '').replace(/.htm/, '').replace(/edit/, 'list');
     if (current == "" || current == "index") current = "dashboard";
+    if (current == "shipping_zone_method_list" || current == "shipping_zone_method_edit") current = "shipping_zone_list";
     forEachElement('.sidebar-menu li a', function(el) {
 	var href = el.getAttribute('href').replace(/.htm/, '');
 	if (href.indexOf(current) !== -1 || href.indexOf(current.replace('_page_', '_')) !== -1) {

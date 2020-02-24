@@ -8816,6 +8816,16 @@ body {
     .app-wrapper .card-title {
       font-size: 1.25rem !important; }
     .app-wrapper .project-title, .app-wrapper .title {
-      font-size: 1.6em !important; } }
+      font-size: 1.6em !important; }
+
+  #app-wrapper > .columns > .column:first-of-type {
+    height: 75px; }
+
+  #breadcrumbs_go_back {
+    top: 105px !important; }
+
+  #breadcrumbs {
+    left: calc(5% + 80px) !important;
+    white-space: nowrap; } }
 
 /*# sourceMappingURL=app_body.css.map */
