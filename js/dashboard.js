@@ -127,5 +127,4 @@ jQuery(document).ready(function() {
         height: 45,
         width: '100%'
     });
-    $(".widget-bars, .widget-lines").style("opacity", 1);
 });
