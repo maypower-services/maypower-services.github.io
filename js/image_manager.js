@@ -134,7 +134,7 @@ reload_masonry = function () {
     $imageListGrid.masonry('layout');
 };
 reload_masonry();
-setInterval(reload_masonry, 500);
+setInterval(reload_masonry, 1000);
 
 // render results from unsplash
 function render(data) {

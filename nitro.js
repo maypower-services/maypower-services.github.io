@@ -17,7 +17,15 @@ function querySourceRaw(Id) {
                     if (edit && edit === 'true') val = el.innerHTML;
                     else val = el.value;
             }
-            break;
+        break;
+	case 'SELECT':
+	if (el.multiple)
+	    val = Array.prototype.slice.call(el.querySelectorAll('option:checked'),0).map(function(v,i,a) { 
+		return v.value; 
+	    });
+	else
+	    val = el.value;
+	break;
         default: var edit = el.contentEditable;
             if (edit && edit === 'true') {
                 val = el.innerHTML;

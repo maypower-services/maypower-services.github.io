@@ -1,5 +1,5 @@
 // #sales-num #pageviews-num #revenue-num #leads-num #sales-average-num
-const client = new KeenAnalysis({
+const KeenClient = new KeenAnalysis({
     projectId: window.projectId,
     readKey: window.readKey
 });
@@ -19,7 +19,7 @@ function refresh_charts() {
     var timeframe = get_timeframe();
 
     // purchases metric
-    client
+    KeenClient
         .query("count", {
             event_collection: "purchases",
             filters: [{
@@ -39,7 +39,7 @@ function refresh_charts() {
         });
 
     // sum price metric
-    client
+    KeenClient
         .query("sum", {
             event_collection: "purchases",
             filters: [{
@@ -57,7 +57,7 @@ function refresh_charts() {
         .catch(function(err) {});
 
     // pageviews metric
-    client
+    KeenClient
         .query("count", {
             event_collection: "pageviews",
             filters: [{
@@ -75,7 +75,7 @@ function refresh_charts() {
         .catch(function(err) {});
 
     // clicks metric
-    client
+    KeenClient
         .query("count", {
             event_collection: "clicks",
             filters: [{
@@ -92,7 +92,7 @@ function refresh_charts() {
         .catch(function(err) {});
 
     // average sales value
-    client
+    KeenClient
         .query("average", {
             event_collection: "purchases",
             target_property: "sum_price",
@@ -112,6 +112,20 @@ function refresh_charts() {
 
 }
 
-(function() {
+jQuery(document).ready(function() {
     refresh_charts();
-})();
+    //Stat widget bars
+    $(".widget-bars").peity("bar", {
+        fill: ["#fff"],
+        height: 45,
+        width: '100%'
+    });
+    //Activity widget line
+    $(".widget-lines").peity("line", {
+        fill: ["#fff"],
+        stroke: "#fff",
+        height: 45,
+        width: '100%'
+    });
+    $(".widget-bars, .widget-lines").style("opacity", 1);
+});

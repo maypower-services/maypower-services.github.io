@@ -72,6 +72,7 @@ function forEachElement(selector, fn) {
 }
 
 function yo_render_preview_image(el) {
+    if (!el) return;
     if (!el.value) return yo_update_image_buttons(el);
     var id = el.id + '_preview';
     var image = document.getElementById(id);

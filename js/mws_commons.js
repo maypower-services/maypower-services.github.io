@@ -39,6 +39,7 @@ function mws_evalScripts(el) {
 	if (mws_hasClass(el, 'has-loaded')) return false;
 	if (el.getAttribute('src')) {
 	    var script = document.createElement('script');
+	    script.async = false;
 	    script.src = el.getAttribute('src');
 	    document.head.appendChild(script);
 	} else

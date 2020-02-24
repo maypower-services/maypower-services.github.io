@@ -9,11 +9,14 @@ function mws_init_modals(){
     //main variable
     var modalID;
 
-    //Triggering a modal
-    mws_addEventListener('.modal-trigger', 'click', function(e) {
-	modalID = e.target.getAttribute('data-modal');
-	console.log("e", e);
-        trigger_modal(modalID);	
+    mws_forEach(qsa('.modal-trigger:not(.initiated)'), function(el) {
+	mws_addClass(el, 'initiated');
+	mws_addEventListener(el, 'click', function(e) {
+	    var modalID = e.target.getAttribute('data-modal');
+	    // done twice
+	    console.log("modal triggered", modalID);
+            trigger_modal(modalID);	
+	});
     });
 
     //Closing a modal

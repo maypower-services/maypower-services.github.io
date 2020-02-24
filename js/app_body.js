@@ -20,7 +20,8 @@ function init_nav() {
                 el.classList.add('is-pushed');
             });
             //disable reader mode switch when sidebar is opened
-            document.querySelector('.reader-switch label').classList.add('is-disabled');
+	    var label = document.querySelector('.reader-switch label');
+            if (label) label.classList.add('is-disabled');
         });
     });
 
