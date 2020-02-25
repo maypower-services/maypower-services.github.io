@@ -18,7 +18,6 @@ function open_image_library() {
 
 /* Listener to image library iframe messages */
 function image_library_message(event) {
-    console.log("image_lib_message", event);
     // fühl dich nicht angesprochen
     if (window.image_library_target != 'app') return false;
     // Check sender origin to be trusted

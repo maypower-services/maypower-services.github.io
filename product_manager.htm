@@ -187,16 +187,18 @@
             price: Price
         };
         window.parent.postMessage({
-            'func': 'productSelect',
-            'message': Product
+			  'origin': 'product_manager',
+			  'func': 'productSelect',
+			  'message': Product
         }, '*');
         close_manager();
     }
 
     function close_manager() {
         window.parent.postMessage({
-            'func': 'closeProductManager',
-            'message': ''
+			  'origin': 'product_manager',
+			  'func': 'closeProductManager',
+			  'message': ''
         }, '*');
     }
 </script>

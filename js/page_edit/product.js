@@ -1,5 +1,6 @@
 function open_product_manager(isInLinkEditor) {
     window.isInLinkEditor = isInLinkEditor;
+    window.image_library_target = 'app';
     if ($('#product-manager-modal').length <= 0) {
         $('body').append(productManagerModalHTML());
     } else {
@@ -14,7 +15,7 @@ function closeProductManager() {
 
 /* build the image mananager modal */
 function productManagerModalHTML() {
-    var HTML = "<iframe id='product-manager-modal' src='/product_manager'></iframe>";
+    var HTML = "<iframe id='product-manager-modal' src='product_manager.htm'></iframe>";
     return HTML;
 }
 

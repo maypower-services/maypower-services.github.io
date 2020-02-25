@@ -162,7 +162,6 @@ function mws_resetImages() {
 function crop_image(url, width, height) {
     width = (width ? width : 100);
     height = (height ? height : false);
-    console.log("crop_image", url, width + ":" + height);
     switch (false) {
     case !/images.unsplash.com/.test(url):
 	var urlParts = url.split("?");
