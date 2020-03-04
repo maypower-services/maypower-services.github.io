@@ -72,7 +72,22 @@
     width: 100%;
     overflow: hidden;
     font-size: 1.2em;}
-
+.list_view > ul > li button.list-item-title {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    cursor: pointer;
+    outline: none;
+}
 .list_view > ul > li .list-item-overtitle,
 .list_view > ul > li .list-item-undertitle {
     font-size: 0.8em;
