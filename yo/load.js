@@ -12,6 +12,7 @@ function load_form(id, html, closeable) {
 	document.body.innerHTML += html;
 
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     
     window.yo_form_id = id;
     stage = document.getElementById("stage-" + id);
@@ -41,6 +42,7 @@ function close_form(id) {
     // remove esc listener
     yo_removeEventListener(document, 'keydown', close_on_esc);
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
 }
 
 var close_on_esc = function(e) {

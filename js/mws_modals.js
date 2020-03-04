@@ -36,8 +36,11 @@ function close_modal(modalID) {
     mws_toggleClass(qs('#' + modalID + ' .modal-content'), 'scaleIn');
     mws_toggleClass(qs('#' + modalID + ' .modal-close'), 'is-hidden');
     //Restore native body scroll
-    if (qsa('.dashboard-wrapper').length)
-        rmc(qs('body'), 'is-fixed');
+    if (qsa('.dashboard-wrapper').length) {
+	rmc(qs('body'), 'is-fixed');
+	document.documentElement.style.overflow = '';
+    }
+        
     
     setTimeout(function(){
         rmc(qs('.modal.is-active'), 'is-active');

@@ -34,7 +34,11 @@
     <script type="text/javascript" src="js/app_body.js"></script>
     <script type="text/javascript" src="js/list_view.js"></script>
     <script type="text/javascript" src="js/page_create_template.js"></script>
-    <style>#top-navbar {pointer-events: none !important}</style>
+    <style>#top-navbar {pointer-events: none !important}
+      @media (max-width: 600px) {
+      #app-wrapper > .columns > .column:first-of-type { height: 0; }
+      .yo-modal .simple-form {margin-top: 70px;}
+      }</style>
     <title>MayPower Web Services</title>    
   </head>
   
