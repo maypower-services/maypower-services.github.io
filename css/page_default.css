@@ -24,7 +24,7 @@ section[section] > .mws-overlay {
 }
 
  /******** Background repeat ********/
-[data-background-stretch=cover] {
+[data-background-stretch=cover], section[data-background-stretch=cover] {
     background-repeat: no-repeat !important;
     background-position: center center !important;
     /* background-attachment: fixed;  */
@@ -33,7 +33,7 @@ section[section] > .mws-overlay {
     -o-background-size: cover !important;
     background-size: cover !important;
 }
-[data-background-parallax=parallax] {
+[data-background-parallax=parallax], section[data-background-parallax=parallax] {
     background-attachment: fixed;
 }
 
