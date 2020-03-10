@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
 });
 
 function load_pass_checker() {
-    qi('submit').disabled = "disabled";
+    qs('button.submit').disabled = "disabled";
     
     $(document).on('keypress', "#password", function(e){ if(e.which == 10 || e.which == 13) { qi("password_confirm").select();}});
     $(document).on('keypress', "#password_confirm", function(e){ if(e.which == 10 || e.which == 13) { qs("button.submit").click();}});
