@@ -2,7 +2,7 @@
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^8.2.3",
-    "ecstatic": "^3.2.0",
+    "ecstatic": "^3.3.2",
     "event-stream": "^3.3.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
