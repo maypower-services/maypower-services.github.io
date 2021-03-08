@@ -294,6 +294,8 @@ function write_Float(buffer, value, offset, isLE, mLen, nBytes) {
 
 // N2O CORE
 
+console.log("test", window.location);
+
 var active = false,
     debug = false,
     session = "site-sid",
