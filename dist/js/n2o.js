@@ -311,8 +311,6 @@ function is(x, num, name) { return x == undefined ? false : (x.t == 106 ? false 
 function co(name) { match = document.cookie.match(new RegExp(name + '=([^;]+)')); return match ? match[1] : undefined; }
 
 function N2O_start() {
-    console.log("domain", domain);
-    console.log("host", host);
     document.cookie = 'X-Auth-Token=' + token() + '; path=/;' + (host == 'localhost' ? '' : ' domain=' + domain +';');
     ws = new bullet(protocol + host + (port==""?"":":"+port) + "/ws" + querystring);
     ws.onmessage = function (evt) { // formatters loop
