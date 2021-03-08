@@ -1,0 +1,198 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link href="dist/css/app.css" rel="stylesheet">
+    <link href="dist/css/yo.css" rel="stylesheet">
+
+    <script src="dist/js/app.min.js"></script>
+    <script src="dist/js/yo.min.js"></script>
+
+    <script src="js/datepicker.min.js"></script>
+    <link rel="stylesheet" href="css/datepicker.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/keen-analytics.js"></script>
+    <script type="text/javascript" src="js/keen-dataviz.js"></script>
+    <link rel="stylesheet" href="css/keen-dataviz.min.css" type="text/css" media="screen" />
+    
+    <title>MayPower Web Services</title>    
+  </head>
+  
+  <body>
+
+    <!-- Top Navbar -->
+    <div id="top-navbar">
+      <!-- Main sidebar menu -->
+      <nav class="main-menu is-dark">
+        <div class="main-menu-inner">
+          <!-- Side icon menu -->
+          <ul>
+	    <li class="main-logo"><a href="index.htm"><img src="img/logo-white.svg"/></a></li>
+	    <li class="side-icon" data-child-menu="dashboard-menu"><svg viewBox="-10 0 1043 1024"><g transform="matrix(1 0 0 -1 0 960)"><path d="M512 924q-106 0 -199 -40.5t-162.5 -110t-109.5 -162.5t-40 -199q0 -66 16 -128.5t47 -118.5t75.5 -103.5t101.5 -82.5q11 -7 24 -4t20 14t4 24t-14 20q-41 26 -74.5 58.5t-59.5 70.5l34 20q11 6 14.5 19t-3.5 24q-6 12 -19 15.5t-24 -3.5l-34 -19q-18 37 -29 78.5 t-14 84.5h35q14 0 23 9.5t9 22.5t-9 22.5t-23 9.5h-35q3 44 14.5 85.5t30.5 79.5l32 -19q3 -2 7.5 -3t8.5 -1q8 0 15.5 4t11.5 12q7 11 3.5 24t-14.5 19l-32 19q24 35 54 65t66 54l18 -31q4 -8 11.5 -12t16.5 -4q4 0 8 1t8 3q11 7 14.5 19.5t-3.5 24.5l-18 31 q37 18 77.5 28.5t83.5 14.5v-40q0 -14 9.5 -23t22.5 -9q14 0 23 9t9 23v40q44 -3 85.5 -14.5t79.5 -29.5l-18 -30q-6 -12 -2.5 -24.5t14.5 -19.5q4 -2 8 -3t8 -1q8 0 15.5 4t12.5 12l17 30q35 -24 65 -54t54 -65l-30 -18q-12 -6 -15 -19t3 -24q5 -8 12.5 -12t15.5 -4 q4 0 8 1t8 3l30 17q18 -37 29.5 -78.5t14.5 -85.5h-35q-13 0 -22.5 -9.5t-9.5 -22.5t9.5 -22.5t22.5 -9.5h35q-3 -43 -13.5 -83.5t-28.5 -77.5l-32 18q-12 7 -24.5 3.5t-19.5 -15.5q-6 -11 -3 -24t15 -19l32 -19q-27 -39 -61.5 -72.5t-76.5 -59.5q-11 -7 -14 -19.5t4 -24.5 q4 -7 11.5 -11t15.5 -4q4 0 8.5 1t8.5 4q57 35 102 82.5t76.5 103.5t48 119t16.5 131q0 105 -40 198t-109.5 162.5t-162.5 110t-199 40.5v0zM748 512q12 7 15 19.5t-3 24.5q-7 11 -19.5 14.5t-24.5 -2.5l-174 -101q-7 4 -14.5 6.5t-16.5 2.5q-26 0 -45 -19t-19 -45t19 -45 t45 -19t45 19t19 45v0v0l173 100v0z" /></g></svg></li>
+	    <li class="side-icon" data-child-menu="documents-menu"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-10 0 1044 1024"><g transform="matrix(1 0 0 -1 0 960)"><path d="M768 960h-352q-27 0 -45.5 -18.5t-18.5 -45.5h352v-256h256v-512h-224v-64h224q27 0 45.5 18.5t18.5 45.5v576zM768 704v166l165 -166h-165zM64 832q-27 0 -45.5 -18.5t-18.5 -45.5v-768q0 -27 18.5 -45.5t45.5 -18.5h544q27 0 45.5 18.5t18.5 45.5v576l-256 256h-352z M608 0h-544v768h288v-256h256v-512zM416 576v166l165 -166h-165z" /></g></svg></li>
+	    <li class="side-icon" data-child-menu="products-menu"><svg viewBox="-10 0 1044 1024"><g transform="matrix(1 0 0 -1 0 960)"><path d="M1023 17l-84 504q-5 49 -44 84t-88 35h-71v85q0 49 -16.5 92t-46 75t-70.5 50.5t-90 18.5t-90 -18.5t-71 -50.5t-47 -75t-17 -92v-85h-77q-49 0 -88 -35t-44 -82l-77 -505q-3 -20 1 -35.5t14 -26.5q9 -10 22.5 -15.5t31.5 -5.5h873q25 0 40 8t22 16t13 22t4 36v0z M352 725q0 71 45 121.5t116 50.5t115 -50.5t44 -121.5v-85h-320v85v0zM947 0l-872 -1q-4 0 -7.5 2.5t-2.5 8.5l77 504q3 25 23.5 43.5t45.5 18.5h77v-73q-14 -9 -23 -23.5t-9 -31.5q0 -27 18.5 -45.5t45.5 -18.5t45.5 18.5t18.5 45.5q0 17 -9 31.5t-23 23.5v73h320v-73 q-14 -9 -23 -23.5t-9 -31.5q0 -27 18.5 -45.5t45.5 -18.5t45.5 18.5t18.5 45.5q0 17 -9 31.5t-23 23.5v73h71q25 0 45.5 -18.5t23.5 -45.5l83 -503q1 -3 -2 -6t-10 -3v0z" /></g></svg></li>
+	    <!-- <li class="side-icon" data-child-menu="misc-menu"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-10 0 1044 1024"><g transform="matrix(1 0 0 -1 0 960)"><path d="M944 736q-33 0 -56.5 -23.5t-23.5 -56.5q0 -7 1.5 -13.5t3.5 -12.5l-195 -168q-11 8 -23.5 13t-26.5 5q-16 0 -30.5 -6t-25.5 -17l-153 77q-2 31 -24.5 52.5t-54.5 21.5q-33 0 -56.5 -23.5t-23.5 -56.5q0 -9 2 -17.5t6 -16.5l-156 -179q-7 2 -14 3.5t-14 1.5 q-33 0 -56.5 -23.5t-23.5 -56.5t23.5 -56.5t56.5 -23.5t56.5 23.5t23.5 56.5q0 8 -1.5 15.5t-4.5 14.5l158 182q6 -2 12 -3t12 -1q17 0 32.5 7t26.5 19l149 -75q0 -33 23.5 -56t56.5 -23t56.5 23.5t23.5 56.5v2v2l208 179q7 -3 15 -5t17 -2q33 0 56.5 23.5t23.5 56.5 t-23.5 56.5t-56.5 23.5v0z" /></g></svg></li>-->
+	    <li class="side-icon" data-child-menu="settings-menu"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-10 0 1044 1024"><g transform="matrix(1 0 0 -1 0 960)"><path d="M960 545l-82 18q-4 16 -10.5 30.5t-13.5 28.5l44 74q13 20 16 46t-16 45l-45 45q-19 19 -46 17.5t-47 -14.5l-72 -46q-14 7 -28.5 13t-29.5 11l-18 84q-5 22 -23 42.5t-45 20.5h-64q-27 0 -43 -20.5t-21 -43.5l-21 -82q-16 -5 -31.5 -11.5t-30.5 -14.5l-74 47 q-19 13 -46.5 14.5t-45.5 -17.5l-46 -45q-18 -19 -15 -45t15 -46l47 -78q-6 -13 -12 -27t-10 -28l-82 -18q-23 -4 -43.5 -22.5t-20.5 -45.5v-64q0 -26 20.5 -42t43.5 -22l83 -20q4 -14 9.5 -26.5t11.5 -24.5l-47 -78q-12 -20 -15 -46t15 -45l46 -45q18 -19 45.5 -17.5 t46.5 14.5l74 47q15 -8 31 -14.5t32 -11.5l20 -82q6 -23 22 -43.5t42 -20.5h64q27 0 45.5 20.5t22.5 43.5l18 83q16 5 30 11t28 13l72 -46q20 -13 47 -14.5t46 17.5l45 45q19 19 16 45t-16 46l-44 74q7 13 12.5 26.5t10.5 28.5l83 20q23 6 43.5 22t20.5 42v64 q0 27 -20.5 45.5t-43.5 22.5v0zM960 418q-2 -2 -5.5 -3.5t-8.5 -2.5l-119 -30l-11 -33q-4 -12 -8.5 -23.5t-10.5 -22.5l-16 -32l63 -104q3 -5 4.5 -9t1.5 -7l-42 -42q-3 1 -6 2.5l-5 2.5l-105 67l-33 -17q-12 -6 -24 -11t-24 -9l-35 -12l-26 -119q-1 -4 -3.5 -8t-3.5 -5h-58 q-2 2 -3.5 5.5t-2.5 8.5l-30 118l-34 11q-13 4 -26 9.5t-26 12.5l-33 17l-105 -67q-3 -2 -6.5 -3.5t-6.5 -1.5l-42 41q0 3 1.5 7t4.5 8l65 109l-15 31q-6 11 -10.5 21.5t-7.5 20.5l-11 34l-117 30q-6 1 -10 2.5t-6 3.5v59v0v0q1 0 4.5 2t6.5 3l121 27l11 35q3 11 7.5 22 t10.5 24l16 31l-65 108q-3 5 -4.5 9t-1.5 7l42 42q3 -1 6 -2.5l5 -2.5l107 -68l33 17q13 7 26 12.5t26 9.5l34 11l29 116q1 6 3 10t4 6h59l2 -3.5t3 -7.5l26 -121l35 -12q13 -3 25 -8.5t24 -11.5l33 -17l103 66q3 2 6.5 3t6.5 1l42 -41q0 -2 -1.5 -6t-4.5 -8l-63 -105 l16 -32q7 -13 12 -25t8 -24l11 -35l119 -27q5 -1 9 -3.5t5 -3.5l-1 -57v0zM512 640q-79 0 -135.5 -56t-56.5 -136t56.5 -136t135.5 -56q80 0 136.5 56t56.5 136t-56.5 136t-136.5 56zM512 320q-53 0 -90.5 37.5t-37.5 90.5t37.5 90.5t90.5 37.5t90.5 -37.5t37.5 -90.5 t-37.5 -90.5t-90.5 -37.5z" /></g></svg></li>
+          </ul>
+          <!-- /Side icon menu -->
+          
+          <!-- Profile wrapper -->
+          <ul class="profile">
+	    <li>
+              <!-- Profile avatar -->
+              <div class="profile-trigger">
+	        <img id="main_menu_avatar" class="main-menu-avatar" src="https://ui-avatars.com/api/?name=M+P&background=758ecd&color=fff" alt="">
+              </div>
+              <!-- /Profile avatar -->
+	    </li>
+          </ul>
+          <!-- /Profile wrapper -->
+        </div>
+      </nav>
+      <!-- /Main sidebar menu -->
+      <style type="text/css" media="screen">
+        @keyframes placeHolderShimmer1{0%{background-position: 0 -468px} 100%{background-position: 0 468px}}
+        .main-menu-inner {animation-duration: 1s;animation-fill-mode: forwards;animation-iteration-count: infinite;animation-name: placeHolderShimmer1;animation-timing-function: linear;background: #344258;background: linear-gradient(to bottom, #344258 1%, #37455C 50%, #344258 80%);background-size: 100px 100%;}
+      </style>
+      
+      
+      <nav class="navbar dashboard-nav has-shadow">
+        <div class="container is-fluid">
+          <!-- Nav left -->
+          <div class="navbar-brand">
+	    <!-- Logout button -->
+	    <button id="logout" class="navbar-item nav-icon logout-button"><svg viewBox="-10 0 1034 1024"><g transform="matrix(1 0 0 -1 0 960)"><path d="M702 796q-12 5 -24.5 0.5t-18.5 -16.5t-1.5 -24t16.5 -18q61 -29 107.5 -74.5t74.5 -102t37 -121t-4 -130.5q-16 -78 -60 -141t-106 -104t-137 -56.5t-154 0.5q-76 16 -137 58.5t-104 107.5q-42 65 -56.5 140t0.5 151q9 45 28 85.5t46.5 75.5t62.5 63t77 48 q12 5 16.5 17.5t-1.5 24.5q-5 12 -17.5 16.5t-24.5 -1.5q-49 -23 -90 -55.5t-73 -73t-54 -88t-32 -99.5q-10 -45 -10 -89t8 -87t25 -84.5t42 -78.5q25 -38 55.5 -69.5t66 -56t75.5 -42t84 -26.5q23 -4 46 -6.5t45 -2.5q79 0 151.5 26.5t131.5 74t100.5 113.5t57.5 146 q16 77 5.5 152t-43.5 141t-86.5 119.5t-124.5 86.5zM512 544q13 0 22.5 9.5t9.5 22.5v352q0 13 -9.5 22.5t-22.5 9.5t-22.5 -9.5t-9.5 -22.5v-352q0 -13 9.5 -22.5t22.5 -9.5z" /></g></svg></button>
+	    <!-- /Logout button -->
+	    
+	    <!-- Reader mode switch --
+	         <div class="navbar-item reader-switch is-hidden-desktop is-hidden-tablet">
+	           <div class="field">
+	             <input id="reader-mode-switch" type="checkbox" name="reader-mode-switch" class="switch is-outlined is-primary is-small">
+	             <label id="reader-mode-toggle" for="reader-mode-switch">
+	             </label>
+	           </div>
+	         </div>
+	         <!-- Reader mode switch -->
+          </div>
+          <!-- /Nav left -->
+          
+          <!-- Nav right -->
+          <div class="navbar-menu">
+	    <div class="navbar-end">
+	      
+	      <!-- Global search (desktop and tablet only) -->
+	      <div class="navbar-item nav-icon search-icon modal-trigger" data-modal="search-modal">
+	        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-13 0 1047 1024">
+	          <g transform="matrix(1 0 0 -1 0 960)">
+		    <path d="M1015 -9l-311 313q43 52 68 117.5t25 138.5q0 83 -31.5 156t-86 127t-127.5 85.5t-155 31.5q-83 0 -156 -31.5t-127.5 -85.5t-85.5 -127t-31 -156t31 -156t85.5 -127t127.5 -85.5t156 -31.5q75 0 142 26t120 72l310 -312q10 -10 23 -10t23 10q9 9 9 22.5t-9 22.5z M397 223q-70 0 -131.5 26.5t-107 72.5t-72 107t-26.5 131t26.5 131t72 107t107 72.5t131.5 26.5q69 0 130.5 -26.5t107 -72.5t72 -107t26.5 -131t-26.5 -131t-72 -107t-107 -72.5t-130.5 -26.5z" />
+	          </g>
+	        </svg>
+	      </div>
+	      <!-- /Global search -->
+	      
+	      <!-- Notifications dropdown (hidden on mobile) -->
+	      <div class="navbar-item drop-pop is-centered nav-icon">
+	        <a href="#" class="nav-inner">
+	          <i>
+		    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-10 0 1034 1024">
+		      <g transform="matrix(1 0 0 -1 0 960)">
+		        <path 
+		          d="M906 248q-28 34 -58.5 80t-30.5 95v209q0 68 -23.5 127.5t-65 104t-97.5 70t-121 25.5q-64 0 -120 -25.5t-97 -70t-64.5 -104t-23.5 -127.5v-209q0 -48 -32 -92.5t-59 -79.5q-24 -32 -38 -58.5t-2 -51.5q11 -22 35.5 -27.5t47.5 -5.5h183q0 -71 50 -121t121 -50t121 50 t50 121h187q15 0 42 4t39 29t-3 50t-41 57v0zM511 4q-43 0 -73.5 30.5t-30.5 73.5h208q0 -43 -30.5 -73.5t-73.5 -30.5v0zM869 176h-712h-7h-5q5 8 11.5 17t12.5 17q29 39 66.5 93.5t37.5 119.5v209q0 54 18 101t50 82t75.5 55.5t93.5 20.5q51 0 94.5 -20.5t75.5 -55.5 t50.5 -82t18.5 -101v-209q0 -67 35.5 -122.5t68.5 -95.5q6 -7 12 -14.5t11 -14.5h-3h-4v0z" />
+		      </g>
+		    </svg>
+	          </i>
+	        </a>
+	      </div>
+	      <!-- /Notifications dropdown -->
+	      <!-- Messages dropdown (hidden on mobile) -->
+	      <div class="navbar-item drop-pop is-centered nav-icon">
+	        <a href="#" class="nav-inner">
+	          <i>
+		    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-10 0 1044 1024">
+		      <g transform="matrix(1 0 0 -1 0 960)">
+		        <path d="M1023 487q-1 8 -4 16t-8 14v0l-1 1q-2 3 -5 6l-6 6l-417 403q-27 27 -68 27t-68 -27l-417 -400q-7 -7 -18 -22t-11 -32v-479q0 -27 19 -45.5t45 -18.5h896q26 0 45 18.5t19 45.5v478v4.5t-1 4.5v0zM270 234l-206 -190v371zM336 207q1 1 3 2.5t3 3.5l0.5 0.5l0.5 0.5 l141 130q5 4 11.5 6.5t13.5 2.5t13.5 -2t10.5 -6l384 -345h-807l226 207v0zM757 229l203 180v-362zM104 517l387 371q5 4 11 6.5t12 2.5t12 -2.5t11 -6.5l361 -345h-1l55 -55l-242 -215l-136 121q-28 22 -64.5 22.5t-66.5 -23.5l-126 -116l-242 214l27 26h2v0z" />
+		      </g>
+		    </svg>
+	          </i>
+	        </a>
+	      </div>
+	      <!-- Messages dropdown -->
+	      
+	      <!-- Right sidebar trigger (desktop and tablet only) -->
+	      <div class="navbar-item nav-icon chat-button" data-show="quickview" data-target="main-quickview">
+	        <i>
+	          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-10 0 1044 1024">
+		    <g transform="matrix(1 0 0 -1 0 960)">
+		      <path d="M512 832q93 0 174.5 -25t142 -68.5t96 -102t35.5 -124.5t-35.5 -124.5t-96 -102t-142 -68.5t-174.5 -25h-27q-13 0 -23 0.5t-24 2.5l-35 5l-23 -28q-8 -9 -44 -36.5t-81 -48.5q10 24 16 49.5t6 51.5l1 2v45l-35 18q-43 21 -76 49.5t-56 61.5t-35 70.5t-12 77.5 q0 66 35.5 124.5t96 102t142 68.5t174.5 25zM512 896q-106 0 -199.5 -30t-163 -82.5t-109.5 -122t-40 -149.5q0 -50 14.5 -95.5t41.5 -86t67 -74.5t91 -60q0 -1 -0.5 -1.5t-0.5 -1.5q0 -43 -18.5 -85.5t-32.5 -67.5v0q-1 -2 -1.5 -5t-0.5 -6q0 -12 8.5 -20.5t20.5 -8.5h4.5 h3.5v0v0q38 7 75.5 24.5t69.5 38t55.5 40t31.5 29.5q17 -3 29.5 -3.5t26.5 -0.5h12.5h14.5q106 0 199.5 30t163 82.5t109.5 122t40 149.5t-40 149.5t-109.5 122t-163 82.5t-199.5 30v0v0z" />
+		    </g>
+	          </svg>
+	        </i>
+	      </div>
+	      <!-- /Right sidebar trigger -->
+	    </div>
+          </div>
+          <!-- /Nav right -->
+        </div>
+      </nav>
+      
+    </div>
+    <!-- /Top Navbar -->
+
+    
+    <div class="content" id="app-wrapper">
+      <div class="columns">
+        <div class="column"></div>
+        <div class="content column is-11">
+	  <nav id="breadcrumbs" class="breadcrumbs"></nav>
+	  <div class="app-wrapper">
+
+
+	    <div id="stage">
+	      
+	      <div class="linear-background"></div>
+	      <div class="linear-background"></div>
+	      <div class="linear-background"></div>
+	      <div class="linear-background"></div>
+	      <div class="linear-background"></div>
+	      
+	      <style type="text/css" media="screen">
+		@keyframes placeHolderShimmer{0%{background-position: -468px 0}100%{background-position: 468px 0}}
+		.linear-background {margin-bottom: 20px;animation-duration: 1s;animation-fill-mode: forwards;animation-iteration-count: infinite;animation-name: placeHolderShimmer;animation-timing-function: linear;background: #f6f7f8;background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);background-size: 1000px 104px;height: 338px;height: calc(20vh - 60px);position: relative;overflow: hidden;border-radius: 5px; opacity: 0.5; border: 1px solid #ededed;}#footer {display: none;}
+	      </style>
+	      
+	    </div>
+	    
+	  </div>
+	  <div id="footer">
+	    Marketingsoftware for High Performance Teams<br> Made in Germany by MayPower
+	  </div>
+	</div>
+        <div class="column"></div>
+      </div>
+    </div>
+    
+    <script>
+      host = location.hostname === 'app.maypower.services' ? 'ws.maypower.services' : location.hostname;
+      port = 8001;
+    </script>
+    <script src="dist/js/n2o.min.js"></script>
+    <script>
+      $io.do = function(r) { console.log(r); };
+      protos = [$bert];
+      N2O_start();
+
+      var notyf = new Notyf();
+      // toastr fallback
+      var toastr = function() {};
+      toastr.error = function(msg) {console.log("error", msg);notyf.error(msg);};
+      toastr.info = function(msg) {notyf.info(msg);};
+      toastr.warning = function(msg) {notyf.warning(msg);};
+      toastr.success = function(msg) {console.log("success",msg); notyf.success(msg);};
+    </script>
+    
+  </body>
+  
+</html>
+

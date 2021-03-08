@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <title id=title>Studio</title>
+
+    <link href="css/notyf.css" rel="stylesheet">
+    <script src="js/notyf.min.js"></script>
+    <script src="js/mws_commons.js"></script>
+    <script type="text/javascript" src="js/hotkeys.min.js"></script>
+    <script type="text/javascript" src="js/mws_commons.js"></script>
+    <script type="text/javascript" src="js/mws_modals.js"></script>
+    
+    <script type="text/javascript" src="yo/load.js"></script>
+    <script type="text/javascript" src="yo/validation.js"></script>
+    <script type="text/javascript" src="yo/telephone.js"></script>
+    <script type="text/javascript" src="yo/date.js"></script>
+    <script type="text/javascript" src="yo/select.js"></script>
+    <script type="text/javascript" src="yo/list.js"></script>
+
+    <link href="yo/select.css" rel="stylesheet">
+    <link href="yo/telephone.css" rel="stylesheet">
+    <link href="yo/date.css" rel="stylesheet">
+    <link href="yo/modal.css" rel="stylesheet">
+
+    <link href="css/studio.css" rel="stylesheet"/>
+    
+  </head>
+  <body>
+
+    <footer class="footer7">
+      <div class="header"><div id="logo"></div></div>
+      <div class="container">
+	
+	<h2 id=headline class="white">Jetzt Vertrag vereinbaren</h2>
+	<div id="stage">
+	  <div class="form">
+	    <div class="linear-background"></div>
+	    <div class="linear-background"></div>
+	    <div class="linear-background"></div>
+	  </div>
+	  <style type="text/css" media="screen">
+	    @keyframes placeHolderShimmer{0%{background-position: -468px 0}100%{background-position: 468px 0}}
+	    .linear-background {margin-bottom: 20px;animation-duration: 1s;animation-fill-mode: forwards;animation-iteration-count: infinite;animation-name: placeHolderShimmer;animation-timing-function: linear;background: #f6f7f8;background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);background-size: 1000px 104px;height: 338px;height: calc(20vh - 60px);position: relative;overflow: hidden;border-radius: 5px; opacity: 0.5; border: 1px solid #ededed;}#footer {display: none;}
+	  </style>
+	</div>
+	<div class="flex">
+	  <div class="footer7_block">
+	    <img src="http://localhost/HTML/i/footer7_img1.png" alt="">
+	    <div class="title">Adresse</div>
+	    <div class="text"><div id="adresse"></div></div>
+	  </div>
+	  <div class="footer7_block">
+	    <img src="http://localhost/HTML/i/footer7_img2.png" alt="">
+	    <div class="title">Telefonnummer</div>
+	    <div class="text"><div id="telefonnummer"></div></div>
+	  </div>
+	  <div class="footer7_block">
+	    <img src="http://localhost/HTML/i/footer7_img3.png" alt="">
+	    <div class="title">e-Mail</div>
+	    <div class="text"><div id="email"></div></div>
+	  </div>
+	</div>
+      </div>
+    </footer>
+    
+
+    <script src="js/n2o/utf8.js"></script><script src="js/n2o/bert.js"></script><script src="js/n2o/heart.js"></script><script src="js/n2o/ieee754.js"></script><script src="js/n2o/n2o.js"></script><script>host = location.hostname === 'app.maypower.services' ? 'ws.maypower.services' : location.hostname; port = 8001;</script><script src="js/n2o/ftp.js"></script><script src="js/n2o/nitro.js"></script>
+
+    <script>
+      host = location.hostname === 'app.maypower.services' ? 'ws.maypower.services' : location.hostname;
+      port = 8001;</script>
+    
+    <script>$io.do = function(r) { console.log(r); };</script><script>protos = [$bert]; N2O_start();</script>
+    <script type="text/javascript">
+      var notyf = new Notyf();
+      // toastr fallback
+      var toastr = function() {};
+      toastr.error = function(msg) {console.log("error", msg);notyf.error(msg);};
+      toastr.info = function(msg) {notyf.info(msg);};
+      toastr.warning = function(msg) {notyf.warning(msg);};
+      toastr.success = function(msg) {console.log("success",msg); notyf.success(msg);};
+    </script>
+    
+  </body>
+</html>

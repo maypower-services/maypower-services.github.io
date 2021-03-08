@@ -1,0 +1,204 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="text/javascript" id="editor_var">
+      window.editor = true;
+    </script>
+    
+    <link href="dist/css/app.css" rel="stylesheet">
+    <link href="dist/css/yo.css" rel="stylesheet">
+
+    <script src="dist/js/app.min.js"></script>
+    <script src="dist/js/yo.min.js"></script>
+
+    <title>MayPower Web Services</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="css/page_editor.css">
+    <link rel="stylesheet" href="css/page_default.css">
+    <link rel="stylesheet" href="css/page_edit.css">
+    <link id="page_lib_css" rel="stylesheet">
+    <link id="page_css" rel="stylesheet">
+    <!-- /CSS -->
+
+    <script type="text/javascript">
+      function mws_resize_iframe(iFrame) {iFrame.height = "";iFrame.height = (iFrame.contentWindow.document.body.scrollHeight == 0 ? 300 : iFrame.contentWindow.document.body.scrollHeight) + "px";}
+    </script>
+
+    <link href="css/jquery-ui.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cloudinary.js"></script>
+
+    <script type="text/javascript" src="js/page_edit/grid_mode.js"></script><!-- required in head -->
+
+  </head>
+  <body class="changes-made">
+    <!-- loading -->
+    <div id="mws-global-loading-overlay"><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div>
+    <!-- /loading -->
+
+
+    <!-- Editor -->
+    <div id="editor">
+      
+      <!-- Edit area -->
+      <div id="edit"></div>
+      <!-- /Edit area -->
+      
+      <!-- Add button -->
+      <div id="mws-add-button-wrap" class="mws-add-button-wrap" style="top: 446px">
+	<button id="mws-add-button" onclick="open_add_section(this)" class="mws-add-button"><svg xmlns="http://www.w3.org/2000/svg" height="33" viewBox="0 0 24 24" width="33"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button>
+      </div>
+      <!-- /Add button -->
+      
+      <!-- Section controls -->
+      <div id="mws-section-controls" class="mws-section-controls" style="top: 66px; display: none;">
+	<ul>
+          <li style="display: none"><button class="mws-button mws-product"     onclick="activate_hovered_section(); open_product_manager(false)"> <i class="fas fa-shopping-cart"></i></button></li>
+          <li><button class="mws-button mws-move-up"     onclick="activate_hovered_section(); moveUpSection(this)"> <i class="fas fa-chevron-up"></i></button></li>
+          <li><button class="mws-button mws-move-down"   onclick="activate_hovered_section(); moveDownSection(this)"> <i class="fas fa-chevron-down"></i></button></li>
+          <li>
+            <button id="mws-settings-button" class="mws-button mws-settings"    onclick="section_settings_dropdown_show();"> <i class="fas fa-ellipsis-h"></i></button>
+            <ul id="mws-settings-dropdown" style="display: none;">
+              <li><button onclick="activate_hovered_section(); section_settings_open($(this).parent())"><i class="fas fa-palette"></i> Section style</button></li>
+              <li><button onclick="activate_hovered_section(); section_settings_code_view_toggle($(this).parent())"><i class="fas fa-code"></i> Code View</button></li>
+              <li><button onclick="activate_hovered_section(); duplicateSection($(this).parent())"><i class="fas fa-clone"></i> Duplicate</button></li>
+              <li><button onclick="activate_hovered_section(); make_section_global()"><i class="fas fa-window-maximize"></i> Make section global</button></li>
+              <li><button onclick="activate_hovered_section(); deleteSection($(this).parent())"><i class="fas fa-trash"></i> Delete section</button></li>
+            </ul>
+          </li>
+          <!-- <li><button class="mws-button mws-delete"      onclick="deleteSection(this)"> <i class="fas fa-trash"></i></button></li> -->
+	</ul>
+      </div>
+      <!-- /Section controls -->
+    </div>
+    <!-- /Editor -->
+
+    <!-- navigation -->
+    <div class="mws-top-nav" id="top-nav">
+      <div class="mws-top-nav-container">
+        <div class="nav-start">
+	  <a class="nav-item" href="page_list.htm">
+	    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	      <path d="M0 0h24v24H0z" fill="none"/>
+	      <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#fff"/>
+	    </svg>
+	  </a>
+	  <div id="mws-page-title" class="nav-item"></div>
+	  <div class="nav-item">
+	    <div>
+	      <div class="switch">
+		<label for="mws-publish-state-checkbox">
+		  <input id="mws-publish-state-checkbox" name="" type="checkbox" onclick="ws.send(enc(tuple(atom('client'), tuple(atom('publish_state'), bin(this.checked)))))"/>
+		  <span class="lever"></span>
+		</label>
+	      </div>
+	    </div>
+	  </div>
+	  <a href="page_edit_help.htm" target="_blank" class="nav-item">
+	    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	      <path fill="none" d="M0 0h24v24H0z"/>
+	      <path fill="#fff" d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/>
+	    </svg>
+	  </a>	  
+	</div>
+	
+	<div class="nav-end">
+	  <div class="nav-item" id="mws-marginizer-mode" onclick="toggle_grid_mode();" title="Grid mode">
+	    <svg id="grid-mode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="24px" height="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 20H4v-4h4v4zm0-6H4v-4h4v4zm0-6H4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4z"/></svg>
+	    <svg id="grid-mode-active-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="24px" height="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 4v1.45l2 2V4h4v4h-3.45l2 2H14v1.45l2 2V10h4v4h-3.45l2 2H20v1.45l2 2V4c0-1.1-.9-2-2-2H4.55l2 2H8zm8 0h4v4h-4V4zM1.27 1.27L0 2.55l2 2V20c0 1.1.9 2 2 2h15.46l2 2 1.27-1.27L1.27 1.27zM10 12.55L11.45 14H10v-1.45zm-6-6L5.45 8H4V6.55zM8 20H4v-4h4v4zm0-6H4v-4h3.45l.55.55V14zm6 6h-4v-4h3.45l.55.54V20zm2 0v-1.46L17.46 20H16z"/></svg>
+	  </div>
+	  <div class="nav-item" id="mws-page-share" onclick="copy_text_to_clipboard(window.page_url, window.lang_copied_page_url);" title="Copy url">
+	    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z" fill="#fff"/></svg>
+	  </div>
+	  <a id="mws-page-link" href="#" target="_blank" class="nav-item" title="Preview">
+	    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="#fff"/></svg>
+	  </a>
+	  <div class="nav-item" id="mws-page-settings-trigger" title="Page Settings">
+	    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	      <path d="M0 0h24v24H0z" fill="none"/>
+	      <path fill="#fff" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+	    </svg>
+	  </div>
+
+	  <div class="nav-item is-button">
+	    <button id="mws-save-page-button" class="button" onclick="is_loading(this); save_page();">Save</button>
+	  </div>
+	</div>
+      </div>
+    </div>
+    <!-- /navigation -->
+
+    <!-- grid mode -->
+    <div id="grid-nav" style="display: none;">
+      <div class="grid-nav-inner">
+	<button class="active" onclick="change_grid_view(this, 'desktop');">
+	  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+	</button>
+	<button onclick="change_grid_view(this, 'tablet');">
+	  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 1.99-.9 1.99-2L23 6c0-1.1-.9-2-2-2zm-2 14H5V6h14v12z"/></svg>
+	</button>
+	<button onclick="change_grid_view(this, 'mobile');">
+	  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+	</button>
+      </div>
+    </div>
+    <!-- /grid mode -->
+    <iframe id="grid-view" style="display: none;" frameborder="0" src=""></iframe>
+    
+    
+    <!-- Froala editor -->
+    <link rel="stylesheet" href="css/froala_editor.pkgd.min.css">
+    <script type="text/javascript" src="js/froala_editor.pkgd.min.js"></script>
+    <!-- Code view  -->
+    <link rel="stylesheet" href="css/codemirror.min.css">
+    <link rel="stylesheet" href="wysiwyg-editor/css/plugins/code_view.min.css">
+    <script type="text/javascript" src="js/codemirror.min.js"></script>
+    <script type="text/javascript" src="js/xml.min.js"></script>
+    <script type="text/javascript" src="wysiwyg-editor/js/plugins/code_view.min.js"></script>
+    <!-- Image editor -->
+    <link rel="stylesheet" href="css/tui-image-editor.css">
+    <link rel="stylesheet" href="css/tui-color-picker.css">
+    <link rel="stylesheet" href="editor_2.9.0/css/third_party/image_tui.css">
+    <script type="text/javascript" src="js/fabric.min.js"></script>
+    <script type="text/javascript" src="js/tui-code-snippet.min.js"></script>
+    <script type="text/javascript" src="js/tui-image-editor.min.js"></script>
+    <script type="text/javascript" src="js/page_edit/image_tui.js"></script>
+    <!-- /Froala editor -->
+
+    <script type="text/javascript" src="js/page_edit/misc.js"></script>
+    <script type="text/javascript" src="js/page_edit/responsiveImages.js"></script>
+    <script type="text/javascript" src="js/page_edit/save.js"></script>
+    <script type="text/javascript" src="js/page_edit/image.js"></script>
+    <script type="text/javascript" src="js/page_edit/section.js"></script>
+    <script type="text/javascript" src="js/page_edit/global_section.js"></script>
+    <script type="text/javascript" src="js/page_edit/product.js"></script>
+    <script type="text/javascript" src="js/page_edit/init.js"></script>
+    
+    <div id="modal-stage"></div>
+
+    <script>
+      host = location.hostname === 'app.maypower.services' ? 'ws.maypower.services' : location.hostname;
+      port = 8001;
+    </script>
+    <script src="dist/js/n2o.min.js"></script>
+    <script>
+      $io.do = function(r) { console.log(r); };
+      protos = [$bert];
+      N2O_start();
+
+      var notyf = new Notyf();
+      // toastr fallback
+      var toastr = function() {};
+      toastr.error = function(msg) {console.log("error", msg);notyf.error(msg);};
+      toastr.info = function(msg) {notyf.info(msg);};
+      toastr.warning = function(msg) {notyf.warning(msg);};
+      toastr.success = function(msg) {console.log("success",msg); notyf.success(msg);};
+    </script>
+
+  </body>
+</html>
