@@ -103,6 +103,7 @@ $.fn.upform = function() {
     }
 
     function moveNext(e) {
+        console.log("$(e).parent().parent().next()", $(e).parent().parent().next());
         $(e).parent().parent().next().click();
     }
 
